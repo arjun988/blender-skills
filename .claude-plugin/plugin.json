@@ -1,0 +1,33 @@
+{
+  "name": "aaa-blender-skills",
+  "version": "1.0.0",
+  "description": "AAA Blender skill pack with 23 specialized skills for technical art, modeling, materials, rigging, export pipelines, and style direction. Orchestrated by blender-director with Blender MCP integration for production-ready game assets.",
+  "author": {
+    "name": "blender-skills"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/your-username/blender-skills",
+  "keywords": [
+    "claude-skill",
+    "claude-code",
+    "blender",
+    "3d",
+    "game-art",
+    "technical-artist",
+    "hard-surface",
+    "environment-art",
+    "character-art",
+    "rigging",
+    "uv-unwrapping",
+    "pbr",
+    "geometry-nodes",
+    "blender-mcp",
+    "model-invoked",
+    "export-pipeline",
+    "horror-game",
+    "lowpoly",
+    "stylized",
+    "photorealistic"
+  ],
+  "skills": "./.claude/skills/"
+}

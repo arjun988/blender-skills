@@ -1,0 +1,47 @@
+{
+  "name": "aaa-blender-skills",
+  "owner": {
+    "name": "your-username"
+  },
+  "metadata": {
+    "description": "AAA Blender production skills for Cursor and Claude Code with Blender MCP integration",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "aaa-blender-skills",
+      "source": "./",
+      "description": "23 specialized Blender skills: blender-director orchestrator, modeling disciplines (hard-surface, environment, character, creature), production workflow (sculpt, retopo, UV, materials, textures), technical skills (geometry nodes, lighting, rendering, animation, rigging), pipeline (optimization, export), and style specialists (horror, lowpoly, stylized, realistic). Built for Blender MCP execution.",
+      "version": "1.0.0",
+      "author": {
+        "name": "blender-skills"
+      },
+      "homepage": "https://github.com/your-username/blender-skills",
+      "repository": "https://github.com/your-username/blender-skills",
+      "license": "MIT",
+      "keywords": [
+        "blender",
+        "3d",
+        "game-art",
+        "technical-artist",
+        "blender-mcp",
+        "hard-surface",
+        "environment-art",
+        "character-art",
+        "rigging",
+        "pbr",
+        "geometry-nodes",
+        "export-pipeline"
+      ],
+      "category": "creative",
+      "tags": [
+        "blender",
+        "3d",
+        "game-development",
+        "technical-art",
+        "mcp"
+      ],
+      "skills": "./.claude/skills/"
+    }
+  ]
+}
