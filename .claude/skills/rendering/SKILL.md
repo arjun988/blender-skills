@@ -104,6 +104,21 @@ Exposure: Adjust in compositor, not by blowing lights
 5. Output PNG sequence or MP4
 ```
 
+## Reference Image Validation
+
+When matching a photo/concept (`../references/reference-image-match.md`):
+
+| Setting | Reference match |
+|---------|-----------------|
+| Hero camera | Match reference angle before grading |
+| AgX Look | Base Contrast default; High Contrast if reference is punchy |
+| Exposure | 0.15–0.45 typical; hull must read, not clip white |
+| Preview playback | EEVEE, motion blur off, `taa_samples` 1–8 |
+| Final still | Render at hero `CAM_*` — compare to reference |
+| Compare tool | `get_viewport_screenshot` or bpy render still |
+
+Run `../references/visual-match-checklist.md` before delivery.
+
 ## MCP Integration
 
 1. Configure render engine settings via MCP
@@ -116,6 +131,7 @@ Exposure: Adjust in compositor, not by blowing lights
 
 ### MUST DO
 - Match render engine to project style
+- **Screenshot or render compare** when reference image was provided
 - Use denoising for Cycles production renders
 - Setup color management before final render
 - Render validation turntable for hero assets
@@ -134,3 +150,5 @@ Exposure: Adjust in compositor, not by blowing lights
 |-------|-----------|-----------|
 | Pass compositing | `references/render-passes.md` | Multi-pass output |
 | NPR/stylized render | `references/npr-rendering.md` | Stylized-style projects |
+| Reference image match | `../references/reference-image-match.md` | Photo/concept attached |
+| Visual match validation | `../references/visual-match-checklist.md` | Before delivery |

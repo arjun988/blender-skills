@@ -15,11 +15,13 @@ docs/BLENDER_MCP_SETUP.md
 ## Agent Instructions
 
 1. For Blender asset tasks, read **blender-director** first for complex work
-2. **Check Blender MCP** — if connected, execute via MCP; never narrate UI steps
-3. Read MCP tool schemas before calling (see `references/mcp-tools.md`)
-4. Follow universal pipeline in `references/asset-pipeline.md`
-5. Validate before export using `references/validation-checklist.md`
-6. Use naming conventions from `references/naming-conventions.md`
+2. **If user attaches a reference image:** read `references/reference-image-match.md` and complete Reference Analysis before MCP execution
+3. **Check Blender MCP** — if connected, execute via MCP; never narrate UI steps
+4. Read MCP tool schemas before calling (see `references/mcp-tools.md`)
+5. Follow universal pipeline in `references/asset-pipeline.md`
+6. Validate before export using `references/validation-checklist.md`
+7. For reference tasks, also run `references/visual-match-checklist.md`
+8. Use naming conventions from `references/naming-conventions.md`
 
 ## MCP Setup
 

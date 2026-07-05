@@ -44,6 +44,8 @@ Collision Planning (if game asset)
 
 ### Reference Collection
 - Gather orthographic views, real-world dimensions, style references
+- **If user attached a photo/concept:** run `reference-image-match.md` — write Reference Analysis (`reference-analysis-template.md`) before modeling
+- Extract color palette (5–8 hex), camera angle, key light direction, hero features
 - Identify modular pieces, hero vs background detail levels
 - Note manufacturing/construction logic for hard surface
 
@@ -69,8 +71,10 @@ Collision Planning (if game asset)
 
 ### Silhouette Review
 - Rotate camera at 45° increments
+- **Match hero camera to reference** if image was provided (`CAM_*` + target empty)
 - Check readability at gameplay/camera distance
 - Fix silhouette before adding micro-detail
+- **Tier 2 panel breaks** (ribs, belts, recesses) before tier 3 greebles
 
 ### Topology Strategy
 - Plan edge flow for deformation (characters) or bevels (hard surface)
@@ -100,8 +104,15 @@ Collision Planning (if game asset)
 
 ### Materials
 - PBR or stylized per art direction
+- **Match palette from reference analysis** when applicable
 - Reuse master materials; instance variations
+- **Emissive lights: per-object materials only** — never animate shared hull mats
 - Limit unique material count for game assets
+
+### Look Dev & Reference Compare
+- Lighting pass before declaring materials done
+- `get_viewport_screenshot` at hero camera vs reference
+- Run `visual-match-checklist.md` when reference was provided
 
 ### Optimization
 - Run asset-optimization validation
@@ -123,6 +134,7 @@ Collision Planning (if game asset)
 
 ### Validation
 - Run full checklist in `validation-checklist.md`
+- **If reference image was used:** run `visual-match-checklist.md`
 - Capture viewport renders from multiple angles
 - Confirm game-ready status before delivery
 
@@ -136,3 +148,4 @@ Collision Planning (if game asset)
 | Creature | Anatomy → Sculpt → Retopo → Rig | creature-artist, sculpting, retopology |
 | Procedural kit | Node design → Variation → Optimization | geometry-nodes, procedural-modeling |
 | Cinematic set | Composition → Lighting → Rendering | lighting, rendering, realistic-style |
+| **Reference image match** | Analysis → Camera → Tiers → Materials → Lighting → Compare | reference-image-match, blender-director, rendering |

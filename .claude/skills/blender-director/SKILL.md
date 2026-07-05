@@ -1,6 +1,6 @@
 ---
 name: blender-director
-description: Orchestrates AAA Blender production workflows. Use when starting any Blender asset task, coordinating multiple disciplines, planning pipelines, choosing skills, or when the user asks to create game-ready assets in Blender. Always activate first for complex Blender requests.
+description: Orchestrates AAA Blender production workflows. Use when starting any Blender asset task, coordinating multiple disciplines, planning pipelines, choosing skills, matching a reference photo or concept art, or when the user asks to create game-ready assets in Blender. Always activate first for complex Blender requests.
 license: MIT
 metadata:
   author: blender-skills
@@ -22,10 +22,13 @@ Senior Technical Director orchestrating AAA Blender production. Think before act
 - Ambiguous requests needing workflow analysis
 - Production planning, polycount targets, export format decisions
 - Coordinating style direction (horror, lowpoly, stylized, realistic)
+- **Reference image / photo match** — user attaches image and wants similar result
 
 ## Core Philosophy
 
 Every asset follows the universal pipeline in `../references/asset-pipeline.md`. Never skip planning. Prefer MCP execution over UI instructions. Avoid destructive workflows. Deliver game-ready, validated assets.
+
+**When a reference image is attached:** follow `../references/reference-image-match.md` end-to-end. Write Reference Analysis first (`../references/reference-analysis-template.md`). Match camera before micro-detail. Run screenshot comparison loop. Validate with `../references/visual-match-checklist.md`.
 
 ## Director Workflow
 
@@ -77,6 +80,25 @@ Before any work, determine:
 | PS1/PS2, Lethal Company style | lowpoly-style | environment-artist, materials |
 | Exaggerated, NPR, hand-painted | stylized-style | materials, rendering |
 | Photoreal, scan cleanup, AAA PBR | realistic-style | texture-workflow, rendering |
+| **Reference photo / concept art attached** | **reference-image-match** | blender-director → discipline skill → style → materials → lighting → rendering |
+
+## Reference Image Workflow (Mandatory)
+
+When user provides a photo or render to match:
+
+```
+1. REFERENCE ANALYSIS  → reference-analysis-template.md (written, before MCP)
+2. BASELINE SCREENSHOT → get_viewport_screenshot
+3. CAMERA MATCH        → CAM_* + EMPTY_CamTarget_* before detailing
+4. GEOMETRY TIERS      → silhouette → panel breaks → greebles
+5. MATERIALS           → palette from reference; per-object emissive lights only
+6. LIGHTING + WORLD    → key direction, rim, space/env mood
+7. GRADING             → AgX exposure/look; EEVEE for animation preview
+8. COMPARE LOOP        → screenshot → gap list → fix (×3 max)
+9. VALIDATE            → visual-match-checklist.md
+```
+
+See `../references/reference-image-match.md` for full protocol and failure fixes.
 
 ## Production Brief Template
 
@@ -152,6 +174,8 @@ blender-director → geometry-nodes → procedural-modeling → asset-optimizati
 
 ### MUST DO
 - Output production brief before modeling
+- **If reference image attached:** complete Reference Analysis and camera match before geometry detail
+- **Screenshot compare** after materials, lighting, and each refinement pass
 - Activate appropriate style skill for art direction
 - Set polycount/texture budgets explicitly
 - Organize collections with `COL_` prefix from start
@@ -160,6 +184,10 @@ blender-director → geometry-nodes → procedural-modeling → asset-optimizati
 
 ### MUST NOT DO
 - Skip planning phase
+- Skip reference analysis when user attached an image
+- Keyframe emission on shared hull/structural materials
+- Add micro-greebles before silhouette and panel-break tiers
+- Declare "done" without visual-match checklist when reference was provided
 - Start modeling without scale reference
 - Mix styles without explicit direction
 - Export without validation
@@ -177,8 +205,19 @@ blender-director → geometry-nodes → procedural-modeling → asset-optimizati
 | Polycount Budgets | `../references/polycount-budgets.md` | Planning phase |
 | Skill Routing | `references/skill-routing.md` | Complex multi-skill tasks |
 | MCP Tools | `../references/mcp-tools.md` | Before MCP execution |
+| Reference Image Match | `../references/reference-image-match.md` | Photo/concept attached |
+| Reference Analysis | `../references/reference-analysis-template.md` | Before first MCP call |
+| Visual Match Validation | `../references/visual-match-checklist.md` | Before delivery |
 
 ## Decision Trees
+
+### Reference Image Provided?
+```
+User attached photo / concept / "match this"?
+├── YES → reference-image-match.md (full workflow)
+│         → Analyze → Camera → Geometry tiers → Materials → Lighting → Compare loop
+└── NO  → Standard pipeline below
+```
 
 ### New Asset Request
 ```

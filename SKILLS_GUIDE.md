@@ -6,6 +6,8 @@ Decision trees and workflow combinations for the AAA Blender Skills Pack.
 
 For any Blender asset task, **blender-director** analyzes the request and routes to specialist skills. You can also invoke skills directly.
 
+**User attached a reference photo?** Start with **blender-director** → read `references/reference-image-match.md` → fill `references/reference-analysis-template.md` before any Blender work.
+
 ## Skill Index
 
 ### Orchestration
@@ -111,11 +113,25 @@ blender-director → geometry-nodes → procedural-modeling → asset-optimizati
 blender-director → [modeling skill] → materials → lighting → rendering
 ```
 
+### Reference Image Match (Photo / Concept Art)
+```
+blender-director → reference-image-match.md
+  → Reference Analysis (template)
+  → Camera match → Geometry tiers 1→2→3
+  → materials → lighting → rendering
+  → visual-match-checklist → validation-checklist
+```
+
+**Key rule:** Analyze image first. Match camera before greebles. Screenshot compare after each major pass. Never animate shared hull materials.
+
 ## Shared References
 
 | Reference | Path |
 |-----------|------|
 | Universal Pipeline | `.claude/skills/references/asset-pipeline.md` |
+| **Reference Image Match** | `.claude/skills/references/reference-image-match.md` |
+| **Reference Analysis Template** | `.claude/skills/references/reference-analysis-template.md` |
+| **Visual Match Checklist** | `.claude/skills/references/visual-match-checklist.md` |
 | MCP Integration | `.claude/skills/references/mcp-integration.md` |
 | Naming Conventions | `.claude/skills/references/naming-conventions.md` |
 | Validation Checklist | `.claude/skills/references/validation-checklist.md` |
@@ -137,6 +153,8 @@ blender-director → [modeling skill] → materials → lighting → rendering
 
 ## Good Prompts
 
+- "Match this reference photo — analyze first, then build in Blender with same lighting and materials"
+- "Upgrade `spacecraft.blend` to match attached image; camera full-ship view; do not rebuild"
 - "Plan and create a game-ready sci-fi crate for Unity, 2k tris, realistic PBR"
 - "Build a horror apartment kitchen — sparse detail, analog props, flickering fluorescent"
 - "Scatter rocks on this cliff using geometry nodes, then bake for export"
@@ -145,6 +163,10 @@ blender-director → [modeling skill] → materials → lighting → rendering
 ## Anti-Patterns
 
 - ❌ "How do I use Blender?" — Skills assume production context
+- ❌ Attaching reference image without asking agent to analyze and match it
 - ❌ Skipping blender-director on complex multi-step tasks
+- ❌ Adding greebles before silhouette and panel-break depth
+- ❌ Keyframing emission on shared hull materials (causes white blowout)
 - ❌ Manual UI steps when Blender MCP is connected
 - ❌ Export without asset-optimization validation
+- ❌ Declaring done on reference tasks without screenshot comparison

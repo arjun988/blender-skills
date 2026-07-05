@@ -61,8 +61,21 @@ Every skill:
 
 - **Thinks before acting** — Plans the full pipeline
 - **Uses Blender MCP** — Executes via MCP when available, not UI walkthroughs
+- **Matches reference images** — Analyze photo first, camera match, screenshot compare loop
 - **Follows production standards** — Naming, validation, game-ready output
 - **Coordinates via Blender Director** — Orchestrates multi-discipline workflows
+
+## Reference Image Workflow
+
+When you attach a photo or concept art:
+
+1. Agent reads [reference-image-match.md](.claude/skills/references/reference-image-match.md)
+2. Writes analysis using [reference-analysis-template.md](.claude/skills/references/reference-analysis-template.md)
+3. Matches camera → geometry (silhouette → panels → detail) → materials → lighting → grading
+4. Compares viewport screenshots to your image (up to 3 refinement passes)
+5. Validates with [visual-match-checklist.md](.claude/skills/references/visual-match-checklist.md)
+
+See [SKILLS_GUIDE.md](SKILLS_GUIDE.md) for the full workflow combination.
 
 ## Skills (23)
 
@@ -82,6 +95,10 @@ Every asset follows: Reference → Planning → Scale → Modeling → Cleanup �
 See [.claude/skills/references/asset-pipeline.md](.claude/skills/references/asset-pipeline.md)
 
 ## Example Prompts
+
+```
+Match this reference photo — industrial spaceship, matte grey hull, analyze first then build in Blender
+```
 
 ```
 Create a modular sci-fi wall kit for Unreal Engine with 2m grid snapping

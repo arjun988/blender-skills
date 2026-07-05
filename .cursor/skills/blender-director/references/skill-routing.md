@@ -15,10 +15,12 @@ Extended routing tables for the Blender Director.
 
 | Phase | Lead Skill | Validators |
 |-------|------------|------------|
+| Reference analysis | blender-director + reference-image-match | reference-analysis-template |
 | Blockout | blender-modeler | blender-director |
 | Detail pass | discipline skill | asset-optimization |
 | UV pass | uv-workflow | texture-workflow |
 | Look dev | materials | style skill |
+| Reference compare | rendering + lighting | visual-match-checklist |
 | Performance | asset-optimization | export-pipeline |
 | Delivery | export-pipeline | validation-checklist |
 

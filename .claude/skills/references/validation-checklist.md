@@ -67,6 +67,21 @@ Run before marking any asset complete. Query scene via Blender MCP when availabl
 - [ ] Asset modular/reusable if part of kit
 - [ ] Style consistent with project art direction
 
+## Visual Match (Reference Image Tasks)
+
+When user provided a reference photo/concept, also run `visual-match-checklist.md`.
+
+- [ ] Reference analysis documented before execution
+- [ ] Hero camera angle matches reference (Match or Close)
+- [ ] Silhouette and proportions Match or Close
+- [ ] Panel depth / not boxy (tier-2 breaks present)
+- [ ] Palette matches reference value range
+- [ ] Key light direction matches reference
+- [ ] Grading/exposure: hull readable, not blown white
+- [ ] Screenshot comparison performed (≥1 iteration)
+- [ ] No shared structural material emission animation
+- [ ] Animation playback sharp (EEVEE preview if animating)
+
 ## Validation Output Template
 
 ```markdown

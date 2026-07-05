@@ -32,10 +32,26 @@ When Blender MCP is available, **execute operations through MCP** instead of des
 ```
 1. List available MCP tools for Blender server
 2. Read schema for each tool before calling
-3. Plan operation sequence (non-destructive first)
-4. Execute step-by-step with validation between steps
-5. Report object names, counts, and metrics after each phase
+3. If reference image attached → reference-analysis-template.md BEFORE step 4
+4. Plan operation sequence (non-destructive first)
+5. Execute step-by-step with validation between steps
+6. get_viewport_screenshot after camera, materials, lighting phases
+7. Report object names, counts, and metrics after each phase
 ```
+
+## Reference Image MCP Loop
+
+When matching a photo:
+
+| Step | MCP Tool |
+|------|----------|
+| Baseline | `get_viewport_screenshot` |
+| Audit scene | `execute_blender_code` (bounds, materials, collections) |
+| Camera / geometry / materials / lights | `execute_blender_code` |
+| Compare pass | `get_viewport_screenshot` or render still via bpy |
+| Save | `execute_blender_code` → `bpy.ops.wm.save_mainfile` |
+
+See `reference-image-match.md` for full workflow and anti-patterns.
 
 ## Scene Organization via MCP
 
