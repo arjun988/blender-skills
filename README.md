@@ -25,9 +25,9 @@
 /plugin install blender-skills@arjun988
 ```
 
-For all installation methods and first steps, see the **[Quick Start Guide](QUICKSTART.md)**.
+For all installation methods and first steps, see the **[Quick Start Guide](https://blender-skills.vercel.app/getting-started/)**.
 
-**Full documentation:** [SKILLS_GUIDE.md](SKILLS_GUIDE.md)
+**Full documentation:** [blender-skills.vercel.app](https://blender-skills.vercel.app/)
 
 ---
 
