@@ -89,12 +89,16 @@ export default function HomePage() {
       {/* ── Quick install ───────────────────────────────────────── */}
       <section className="max-w-screen-xl mx-auto w-full px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-5">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary">Quick Install</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary">Installation</p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Two commands.<br />Production-ready.
+            Clone and go.<br />Production-ready.
           </h2>
+          <div className="rounded-lg border border-yellow-500/40 bg-yellow-500/5 px-4 py-3 text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">🕐 Marketplace under review — </span>
+            install directly from GitHub below.
+          </div>
           <p className="text-muted-foreground leading-relaxed">
-            Install via the Claude Code plugin marketplace. All 23 skills and 40 reference files drop straight into your agent context — zero config.
+            All 23 skills and 40 reference files drop straight into your agent context. Once the marketplace listing is approved, a single command will handle everything.
           </p>
           <Link
             href="/getting-started"
@@ -108,18 +112,18 @@ export default function HomePage() {
             <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
             <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
             <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
-            <span className="ml-2 text-xs text-muted-foreground font-mono">Claude Code</span>
+            <span className="ml-2 text-xs text-muted-foreground font-mono">Terminal</span>
           </div>
           <div className="p-5 space-y-2 font-mono text-sm">
             <p>
               <span className="text-muted-foreground select-none">$ </span>
-              <span className="text-foreground">/plugin marketplace add arjun988/blender-skills</span>
+              <span className="text-foreground">git clone https://github.com/arjun988/blender-skills.git</span>
             </p>
             <p>
               <span className="text-muted-foreground select-none">$ </span>
-              <span className="text-foreground">/plugin install blender-skills@arjun988</span>
+              <span className="text-foreground">cp -r blender-skills/.claude/skills .claude/skills/</span>
             </p>
-            <p className="text-green-600 dark:text-green-400 pt-1">✓ 23 skills installed successfully</p>
+            <p className="text-green-600 dark:text-green-400 pt-1">✓ 23 skills ready in your project</p>
           </div>
         </div>
       </section>

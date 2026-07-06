@@ -57,29 +57,29 @@ export default function GettingStartedPage() {
       <section className="space-y-6">
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Installation</h2>
 
-        <div>
-          <h3 className="font-semibold mb-1 text-lg">Marketplace (Recommended)</h3>
-          <p className="text-muted-foreground text-sm mb-2">The fastest way — installs all 23 skills plus shared references.</p>
-          <CodeBlock>{`/plugin marketplace add arjun988/blender-skills
-/plugin install blender-skills@arjun988`}</CodeBlock>
-          <p className="text-sm text-muted-foreground">Restart Claude Code when prompted.</p>
+        {/* Under review notice */}
+        <div className="rounded-lg border border-yellow-500/40 bg-yellow-500/5 px-4 py-4 text-sm space-y-1">
+          <p className="font-semibold text-foreground">🕐 Marketplace listing under review</p>
+          <p className="text-muted-foreground">
+            The Claude Code marketplace submission is currently being reviewed by Anthropic.
+            In the meantime, install directly from GitHub using the methods below.
+          </p>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-1 text-lg">Install from GitHub</h3>
-          <CodeBlock>{`claude plugin install https://github.com/arjun988/blender-skills`}</CodeBlock>
+          <h3 className="font-semibold mb-1 text-lg">Install from GitHub — Claude Code</h3>
+          <p className="text-muted-foreground text-sm mb-2">Clone the repo and copy skills into your project.</p>
+          <CodeBlock>{`git clone https://github.com/arjun988/blender-skills.git
+cp -r blender-skills/.claude/skills /path/to/your/project/.claude/skills/`}</CodeBlock>
+          <p className="text-sm text-muted-foreground">Restart Claude Code after copying.</p>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-1 text-lg">Manual — Cursor</h3>
+          <h3 className="font-semibold mb-1 text-lg">Install from GitHub — Cursor</h3>
           <p className="text-muted-foreground text-sm mb-2">Copy skills to Cursor's project skills folder (Windows).</p>
-          <CodeBlock>{`Copy-Item -Recurse -Force ".claude\\skills\\*" ".cursor\\skills\\"`}</CodeBlock>
+          <CodeBlock>{`git clone https://github.com/arjun988/blender-skills.git
+Copy-Item -Recurse -Force "blender-skills\\.claude\\skills\\*" ".cursor\\skills\\"`}</CodeBlock>
           <p className="text-sm text-muted-foreground">Restart Cursor after copying.</p>
-        </div>
-
-        <div>
-          <h3 className="font-semibold mb-1 text-lg">Manual — Claude Code</h3>
-          <CodeBlock>{`cp -r .claude/skills /path/to/your/project/.claude/skills/`}</CodeBlock>
         </div>
       </section>
 

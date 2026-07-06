@@ -20,9 +20,19 @@
 
 ## Quick Start
 
+> **Marketplace listing is currently under review by Anthropic.**
+> Install directly from GitHub in the meantime:
+
+**Claude Code**
 ```bash
-/plugin marketplace add arjun988/blender-skills
-/plugin install blender-skills@arjun988
+git clone https://github.com/arjun988/blender-skills.git
+cp -r blender-skills/.claude/skills /path/to/your/project/.claude/skills/
+```
+
+**Cursor (Windows)**
+```powershell
+git clone https://github.com/arjun988/blender-skills.git
+Copy-Item -Recurse -Force "blender-skills\.claude\skills\*" ".cursor\skills\"
 ```
 
 For all installation methods and first steps, see the **[Quick Start Guide](https://blender-skills.vercel.app/getting-started/)**.
