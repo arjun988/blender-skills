@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2, Terminal } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SKILL_COUNT, SITE_VERSION, platforms } from '@/lib/skills-data'
 
 function CodeBlock({ children }: { children: string }) {
   return <pre className="my-4">{children.trim()}</pre>
@@ -24,62 +24,92 @@ function Step({ n, title, children }: { n: number; title: string; children: Reac
   )
 }
 
-function Callout({ children, type = 'note' }: { children: React.ReactNode; type?: 'note' | 'tip' | 'warning' }) {
-  const styles = {
-    note: 'border-primary/40 bg-primary/5 text-foreground',
-    tip: 'border-green-500/40 bg-green-500/5 text-foreground',
-    warning: 'border-yellow-500/40 bg-yellow-500/5 text-foreground',
-  }
-  const labels = { note: 'Note', tip: 'Tip', warning: 'Warning' }
-  return (
-    <div className={`my-4 rounded-lg border px-4 py-3 text-sm ${styles[type]}`}>
-      <strong>{labels[type]}: </strong>
-      {children}
-    </div>
-  )
-}
-
 export default function GettingStartedPage() {
   return (
     <div className="max-w-3xl space-y-12 pb-16">
-      {/* Header */}
       <div className="space-y-3">
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Badge>Getting Started</Badge>
+          <Badge variant="muted">v{SITE_VERSION}</Badge>
         </div>
         <h1 className="text-4xl font-bold tracking-tight">Getting Started</h1>
         <p className="text-lg text-muted-foreground">
-          Get up and running with Blender Skills in Claude Code or Cursor with Blender MCP.
+          Install Blender Skills in <strong>Cursor</strong>, <strong>Claude Code</strong>,{' '}
+          <strong>Kiro</strong>, or <strong>Codex</strong>, then connect Blender MCP for live execution.
         </p>
       </div>
+
+      {/* Platforms overview */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Supported Agents</h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {platforms.map((p) => (
+            <div key={p.name} className="rounded-lg border p-4 space-y-1">
+              <p className="font-semibold">{p.name}</p>
+              <p className="text-sm text-muted-foreground">{p.blurb}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Installation */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Installation</h2>
 
-        {/* Under review notice */}
         <div className="rounded-lg border border-yellow-500/40 bg-yellow-500/5 px-4 py-4 text-sm space-y-1">
-          <p className="font-semibold text-foreground">🕐 Marketplace listing under review</p>
+          <p className="font-semibold text-foreground">Marketplace listing under review</p>
           <p className="text-muted-foreground">
-            The Claude Code marketplace submission is currently being reviewed by Anthropic.
-            In the meantime, install directly from GitHub using the methods below.
+            Install directly from GitHub for all platforms until marketplace install is available.
           </p>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-1 text-lg">Install from GitHub — Claude Code</h3>
-          <p className="text-muted-foreground text-sm mb-2">Clone the repo and copy skills into your project.</p>
-          <CodeBlock>{`git clone https://github.com/arjun988/blender-skills.git
-cp -r blender-skills/.claude/skills /path/to/your/project/.claude/skills/`}</CodeBlock>
-          <p className="text-sm text-muted-foreground">Restart Claude Code after copying.</p>
+          <h3 className="font-semibold mb-1 text-lg">1. Clone the repo</h3>
+          <CodeBlock>{`git clone https://github.com/arjun988/blender-skills.git`}</CodeBlock>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-1 text-lg">Install from GitHub — Cursor</h3>
-          <p className="text-muted-foreground text-sm mb-2">Copy skills to Cursor's project skills folder (Windows).</p>
-          <CodeBlock>{`git clone https://github.com/arjun988/blender-skills.git
-Copy-Item -Recurse -Force "blender-skills\\.claude\\skills\\*" ".cursor\\skills\\"`}</CodeBlock>
-          <p className="text-sm text-muted-foreground">Restart Cursor after copying.</p>
+          <h3 className="font-semibold mb-1 text-lg">2. Claude Code</h3>
+          <p className="text-muted-foreground text-sm mb-2">
+            Copy skills into your project&apos;s <code>.claude/skills/</code> folder.
+          </p>
+          <CodeBlock>{`cp -r blender-skills/.claude/skills /path/to/your/project/.claude/skills/
+# Restart Claude Code after copying`}</CodeBlock>
+        </div>
+
+        <div>
+          <h3 className="font-semibold mb-1 text-lg">3. Cursor</h3>
+          <p className="text-muted-foreground text-sm mb-2">
+            Copy into Cursor project skills (Windows PowerShell example):
+          </p>
+          <CodeBlock>{`Copy-Item -Recurse -Force "blender-skills\\.claude\\skills\\*" ".cursor\\skills\\"
+# Restart Cursor after copying`}</CodeBlock>
+          <p className="text-sm text-muted-foreground mt-2">
+            macOS/Linux: <code>cp -r blender-skills/.claude/skills/* .cursor/skills/</code>
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-semibold mb-1 text-lg">4. Kiro</h3>
+          <p className="text-muted-foreground text-sm mb-2">
+            Kiro uses agent skills folders similarly — copy the skill directories into your Kiro skills path
+            (project or user skills, depending on your Kiro setup), then restart Kiro.
+          </p>
+          <CodeBlock>{`# Example: copy into your Kiro skills directory
+cp -r blender-skills/.claude/skills/* /path/to/kiro/skills/
+# Point Blender MCP at the same BlenderMCP addon session`}</CodeBlock>
+        </div>
+
+        <div>
+          <h3 className="font-semibold mb-1 text-lg">5. Codex</h3>
+          <p className="text-muted-foreground text-sm mb-2">
+            Mount or copy <code>.claude/skills</code> into your Codex skills / instructions path so the
+            agent can discover <code>SKILL.md</code> files. Configure Blender MCP the same way you would
+            for other MCP-capable clients.
+          </p>
+          <CodeBlock>{`# Example: symlink skills into Codex skills path
+ln -s /path/to/blender-skills/.claude/skills /path/to/codex/skills/blender-skills
+# Or copy: cp -r blender-skills/.claude/skills/* /path/to/codex/skills/`}</CodeBlock>
         </div>
       </section>
 
@@ -87,7 +117,8 @@ Copy-Item -Recurse -Force "blender-skills\\.claude\\skills\\*" ".cursor\\skills\
       <section className="space-y-4">
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Connect Blender MCP</h2>
         <p className="text-muted-foreground">
-          Every skill executes directly inside Blender via the BlenderMCP addon. This is required for MCP execution — without it, skills fall back to instructions only.
+          Every skill executes inside Blender via the BlenderMCP addon. Required for MCP execution —
+          without it, skills fall back to instructions only.
         </p>
 
         <div>
@@ -101,37 +132,56 @@ curl -LsSf https://astral.sh/uv/install.sh | sh`}</CodeBlock>
 
           <Step n={2} title="Install the BlenderMCP addon in Blender">
             <p className="text-sm text-muted-foreground mb-3">
-              Download <a href="https://github.com/ahujasid/blender-mcp/raw/main/addon.py" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">addon.py</a> then in Blender:
+              Download{' '}
+              <a
+                href="https://github.com/ahujasid/blender-mcp/raw/main/addon.py"
+                className="text-primary hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                addon.py
+              </a>{' '}
+              then in Blender:
             </p>
             <CodeBlock>{`Edit → Preferences → Add-ons → Install → select addon.py → Enable "Blender MCP"`}</CodeBlock>
           </Step>
 
           <Step n={3} title="Start the MCP server in Blender">
             <p className="text-sm text-muted-foreground">
-              In the Blender 3D Viewport press <code>N</code> to open the sidebar → find the <strong>BlenderMCP</strong> tab → click <strong>Connect to Claude</strong>.
+              In the Blender 3D Viewport press <code>N</code> → <strong>BlenderMCP</strong> tab →{' '}
+              <strong>Connect to Claude</strong> (works as the MCP bridge for all clients).
             </p>
           </Step>
 
-          <Step n={4} title="Restart Cursor / Claude Code">
+          <Step n={4} title="Restart your agent client">
             <p className="text-sm text-muted-foreground mb-2">
-              This repo ships preconfigured MCP config files — no manual editing needed:
+              This repo ships MCP config for Cursor and Claude Code. Kiro and Codex should point at the
+              same BlenderMCP server once skills are installed.
             </p>
             <div className="overflow-x-auto rounded-lg border">
               <table className="w-full text-sm">
                 <thead className="bg-muted">
                   <tr>
-                    <th className="text-left px-4 py-2 font-medium">Config File</th>
+                    <th className="text-left px-4 py-2 font-medium">Config / Path</th>
                     <th className="text-left px-4 py-2 font-medium">Client</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-t">
-                    <td className="px-4 py-2 font-mono text-xs">.cursor/mcp.json</td>
-                    <td className="px-4 py-2 text-muted-foreground">Cursor (project)</td>
+                    <td className="px-4 py-2 font-mono text-xs">.cursor/mcp.json + .cursor/skills/</td>
+                    <td className="px-4 py-2 text-muted-foreground">Cursor</td>
                   </tr>
                   <tr className="border-t">
-                    <td className="px-4 py-2 font-mono text-xs">.mcp.json</td>
-                    <td className="px-4 py-2 text-muted-foreground">Claude Code (project)</td>
+                    <td className="px-4 py-2 font-mono text-xs">.mcp.json + .claude/skills/</td>
+                    <td className="px-4 py-2 text-muted-foreground">Claude Code</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="px-4 py-2 font-mono text-xs">Kiro skills dir + Blender MCP</td>
+                    <td className="px-4 py-2 text-muted-foreground">Kiro</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="px-4 py-2 font-mono text-xs">Codex skills path + Blender MCP</td>
+                    <td className="px-4 py-2 text-muted-foreground">Codex</td>
                   </tr>
                 </tbody>
               </table>
@@ -145,7 +195,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh`}</CodeBlock>
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Verify Setup</h2>
         <div className="space-y-2">
           {[
-            'Skills visible in agent context (try mentioning "blender-director")',
+            `Skills visible (${SKILL_COUNT} expected) — try mentioning "blender-director"`,
             'Blender MCP connected (green status in addon panel)',
             'Test: "List objects in the current Blender scene"',
             'Collections use COL_ prefix, meshes use SM_ prefix',
@@ -162,28 +212,30 @@ curl -LsSf https://astral.sh/uv/install.sh | sh`}</CodeBlock>
       <section className="space-y-4">
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">First Prompt</h2>
         <p className="text-muted-foreground">
-          Start with <strong>blender-director</strong> on any complex task — it plans the pipeline and routes to the right skills automatically.
+          Start with <strong>blender-director</strong> — it plans the pipeline and routes genre, style, and discipline skills.
         </p>
         <CodeBlock>{`Plan and create a game-ready sci-fi crate for Unity — 1500 tris, realistic PBR, export to FBX`}</CodeBlock>
         <p className="text-sm text-muted-foreground">The agent will:</p>
         <ol className="space-y-1 text-sm text-muted-foreground list-decimal list-inside">
-          <li>Activate <strong>blender-director</strong> → output production brief</li>
-          <li>Route to <strong>hard-surface</strong> + <strong>realistic-style</strong></li>
-          <li>Execute via Blender MCP (not UI walkthroughs)</li>
-          <li>Validate with <strong>asset-optimization</strong> → <strong>export-pipeline</strong></li>
+          <li>Activate <strong>blender-director</strong> → production brief</li>
+          <li>Route to <strong>hard-surface</strong> + <strong>realistic-style</strong> + <strong>unity-export</strong></li>
+          <li>Execute via Blender MCP</li>
+          <li>Validate with <strong>asset-optimization</strong> / <strong>qa-review</strong></li>
         </ol>
       </section>
 
-      {/* Good prompts */}
+      {/* Examples */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Example Prompts</h2>
         <div className="space-y-3">
           {[
             'Match this reference photo — industrial spaceship, analyze first then build in Blender',
-            'Create a modular sci-fi wall kit for Unreal Engine with 2m grid snapping',
-            'Block out a horror corridor inspired by Silent Hill — narrow, flickering fluorescent',
-            'Retopologize this creature sculpt for game animation, 15k triangle budget',
-            'Export this character with walk cycle to FBX for Unity',
+            'Build a liminal Backrooms lobby — fluorescent hum, stained carpet, endless doors',
+            'Cyberpunk street vendor stall, neon-retrofuturism, Unreal export with UCX',
+            'Soulslike chapel interior, dark fantasy, fog gate landmark',
+            'HD-2D forest clearing, pixel party characters, theatrical DoF',
+            'JRPG starter town, cozy mood, hand-painted materials',
+            'Model a game-ready sedan for Unreal with LODs and UCX collision',
             'Scatter rocks on this cliff using geometry nodes, then bake for export',
           ].map((prompt) => (
             <div key={prompt} className="rounded-lg border bg-muted/40 px-4 py-3">
@@ -201,28 +253,34 @@ curl -LsSf https://astral.sh/uv/install.sh | sh`}</CodeBlock>
           <div>
             <p className="font-semibold text-sm">Skills not activating</p>
             <p className="text-sm text-muted-foreground mt-1">
-              Ensure skills are in <code>.cursor/skills/</code> (Cursor) or <code>.claude/skills/</code> (Claude Code). Restart the client after copying.
+              Ensure skills are in the correct path for your client (Cursor <code>.cursor/skills/</code>,
+              Claude Code <code>.claude/skills/</code>, or your Kiro/Codex skills directory). Restart after copying.
             </p>
           </div>
           <div>
             <p className="font-semibold text-sm">MCP not connecting</p>
             <p className="text-sm text-muted-foreground mt-1">
-              Usually a <code>uv</code> PATH issue or the BlenderMCP addon wasn't started. See{' '}
-              <a href="https://github.com/arjun988/blender-skills/blob/main/docs/BLENDER_MCP_SETUP.md" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+              Usually a <code>uv</code> PATH issue or the BlenderMCP addon wasn&apos;t started. See{' '}
+              <a
+                href="https://github.com/arjun988/blender-skills/blob/main/docs/BLENDER_MCP_SETUP.md"
+                className="text-primary hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 BLENDER_MCP_SETUP.md
-              </a>.
+              </a>
+              .
             </p>
           </div>
           <div>
             <p className="font-semibold text-sm">Agent describes UI instead of executing</p>
             <p className="text-sm text-muted-foreground mt-1">
-              Remind it: <code>&ldquo;Use Blender MCP tools&rdquo;</code> — skills enforce MCP-first in <code>mcp-integration.md</code>.
+              Remind it: <code>&ldquo;Use Blender MCP tools&rdquo;</code> — skills enforce MCP-first.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Next Steps */}
       <div className="rounded-xl border bg-primary/5 p-6 space-y-3">
         <h3 className="font-bold">Next Steps</h3>
         <div className="flex flex-col sm:flex-row gap-3">
@@ -230,7 +288,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh`}</CodeBlock>
             href="/skills"
             className="flex items-center gap-2 rounded-lg border bg-background px-4 py-3 text-sm hover:bg-accent transition-colors"
           >
-            Browse all 23 skills <ArrowRight className="ml-auto h-4 w-4 text-primary" />
+            Browse all {SKILL_COUNT} skills <ArrowRight className="ml-auto h-4 w-4 text-primary" />
           </Link>
           <a
             href="https://github.com/arjun988/blender-skills/blob/main/CONTRIBUTING.md"

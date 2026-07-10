@@ -1,257 +1,77 @@
-import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-
-const skillCategories = [
-  {
-    id: 'orchestration',
-    title: 'Orchestration',
-    description: 'Pipeline planning, skill routing, and production briefs. Always start here for complex tasks.',
-    skills: [
-      {
-        name: 'blender-director',
-        desc: 'Analyzes your request, selects the right specialists, outputs a production brief, and orchestrates the full pipeline.',
-        tags: ['routing', 'planning', 'orchestration'],
-      },
-    ],
-  },
-  {
-    id: 'modeling',
-    title: 'Modeling Disciplines',
-    description: 'Specialist modelers for every asset type — props, environments, characters, and creatures.',
-    skills: [
-      {
-        name: 'blender-modeler',
-        desc: 'General modeling, Edit Mode workflows, modifiers, scene organization, and blockouts.',
-        tags: ['edit-mode', 'modifiers', 'blockout'],
-      },
-      {
-        name: 'hard-surface',
-        desc: 'Sci-fi props, weapons, vehicles, and mechanical assets. Boolean/bevel workflows, panel lines, greebles.',
-        tags: ['sci-fi', 'weapons', 'vehicles', 'booleans'],
-      },
-      {
-        name: 'environment-artist',
-        desc: 'Modular kits, terrain, architecture, and game-optimized environment pipelines with 2m grid snapping.',
-        tags: ['modular', 'terrain', 'architecture'],
-      },
-      {
-        name: 'character-artist',
-        desc: 'Human anatomy, facial topology, clothing, hair, and animation-ready character meshes.',
-        tags: ['character', 'anatomy', 'facial'],
-      },
-      {
-        name: 'creature-artist',
-        desc: 'Monsters, fantasy creatures, aliens, and organic design with believable anatomy and movement.',
-        tags: ['creature', 'organic', 'fantasy'],
-      },
-    ],
-  },
-  {
-    id: 'workflow',
-    title: 'Production Workflow',
-    description: 'The sculpt → retopo → UV → materials → textures pipeline. Used after high-poly modeling.',
-    skills: [
-      {
-        name: 'sculpting',
-        desc: 'High-frequency surface detail using Dyntopo, multiresolution, brushes, alphas, wrinkles, and damage.',
-        tags: ['dyntopo', 'multires', 'alphas'],
-      },
-      {
-        name: 'retopology',
-        desc: 'Animation-ready, quad-dominant meshes with proper edge loops and efficient polygon flow.',
-        tags: ['quads', 'edge-loops', 'animation-ready'],
-      },
-      {
-        name: 'uv-workflow',
-        desc: 'Seam placement, UV packing, texel density, UDIM, lightmap UVs, and modular UV layouts.',
-        tags: ['uvs', 'texel-density', 'udim'],
-      },
-      {
-        name: 'materials',
-        desc: 'PBR and stylized materials for metal, wood, concrete, fabric, glass, and procedural shaders.',
-        tags: ['pbr', 'procedural', 'shaders'],
-      },
-      {
-        name: 'texture-workflow',
-        desc: 'Baking AO, curvature, normals, ORM packing, atlases, decals, and texture memory optimization.',
-        tags: ['baking', 'normals', 'atlases'],
-      },
-    ],
-  },
-  {
-    id: 'technical',
-    title: 'Technical Skills',
-    description: 'Procedural systems, lighting, rendering, animation, and rigging.',
-    skills: [
-      {
-        name: 'geometry-nodes',
-        desc: 'Scatter systems, procedural vegetation, buildings, pipes, cables, and reusable node groups.',
-        tags: ['procedural', 'scatter', 'node-groups'],
-      },
-      {
-        name: 'lighting',
-        desc: 'Three-point lighting, HDRI, horror lighting, volumetrics, rim lighting, and mood-driven illumination.',
-        tags: ['hdri', 'volumetrics', 'cinematic'],
-      },
-      {
-        name: 'rendering',
-        desc: 'Cycles and Eevee — sampling, denoising, camera setup, render passes, and color management.',
-        tags: ['cycles', 'eevee', 'denoising'],
-      },
-      {
-        name: 'animation',
-        desc: 'Walk/run/idle cycles, combat, mechanical animation, Graph Editor, and NLA workflows.',
-        tags: ['locomotion', 'nla', 'graph-editor'],
-      },
-      {
-        name: 'rigging',
-        desc: 'Armatures, IK/FK, constraints, weight painting, mechanical rigs, facial rigs, and drivers.',
-        tags: ['ik-fk', 'weight-paint', 'drivers'],
-      },
-    ],
-  },
-  {
-    id: 'pipeline',
-    title: 'Pipeline',
-    description: 'Procedural asset creation, optimization gate, and multi-format export. Use before every delivery.',
-    skills: [
-      {
-        name: 'procedural-modeling',
-        desc: 'Rocks, buildings, vegetation, roads, terrain, pipes, and cables using Geometry Nodes and modifier stacks.',
-        tags: ['procedural', 'rocks', 'vegetation'],
-      },
-      {
-        name: 'asset-optimization',
-        desc: 'Validates polycount, topology, UV efficiency, material count, naming, and game-ready performance.',
-        tags: ['validation', 'polycount', 'lod'],
-      },
-      {
-        name: 'export-pipeline',
-        desc: 'Production export to FBX, GLTF, OBJ, USD, and Alembic with scale, pivot, and normals verification.',
-        tags: ['fbx', 'gltf', 'usd'],
-      },
-    ],
-  },
-  {
-    id: 'style',
-    title: 'Style Specialists',
-    description: 'Art direction skills that define the visual language of your project before modeling begins.',
-    skills: [
-      {
-        name: 'horror-style',
-        desc: 'Psychological horror inspired by Silent Hill, Resident Evil, and Iron Lung. Sparse industrial environments, analog aesthetics.',
-        tags: ['horror', 'silent-hill', 'atmospheric'],
-      },
-      {
-        name: 'lowpoly-style',
-        desc: 'PS1/PS2 aesthetic inspired by Lethal Company and Mouthwashing. Minimal polygons, strong silhouettes.',
-        tags: ['lowpoly', 'ps1', 'retro'],
-      },
-      {
-        name: 'stylized-style',
-        desc: 'NPR rendering, hand-painted assets, shape exaggeration, and color harmony for non-photorealistic projects.',
-        tags: ['npr', 'hand-painted', 'cartoon'],
-      },
-      {
-        name: 'realistic-style',
-        desc: 'Photorealistic AAA PBR, photogrammetry cleanup, real-world scale, and high-poly workflows.',
-        tags: ['aaa', 'photogrammetry', 'cinematic'],
-      },
-    ],
-  },
-]
-
-const workflows = [
-  {
-    title: 'Hero Hard Surface Prop',
-    pipeline: ['blender-director', 'hard-surface', 'uv-workflow', 'materials', 'asset-optimization', 'export-pipeline'],
-  },
-  {
-    title: 'Game Character',
-    pipeline: ['blender-director', 'character-artist', 'sculpting', 'retopology', 'uv-workflow', 'texture-workflow', 'rigging', 'animation', 'export-pipeline'],
-  },
-  {
-    title: 'Horror Environment',
-    pipeline: ['blender-director', 'horror-style', 'environment-artist', 'lighting', 'lowpoly-style', 'asset-optimization', 'export-pipeline'],
-  },
-  {
-    title: 'Modular Kit',
-    pipeline: ['blender-director', 'environment-artist', 'geometry-nodes', 'uv-workflow', 'texture-workflow', 'asset-optimization', 'export-pipeline'],
-  },
-  {
-    title: 'Procedural Scatter',
-    pipeline: ['blender-director', 'geometry-nodes', 'procedural-modeling', 'asset-optimization'],
-  },
-  {
-    title: 'Reference Image Match',
-    pipeline: ['blender-director', 'reference-image-match', 'Camera match', 'Geometry tiers', 'Materials', 'Screenshot loop', 'visual-match-checklist'],
-  },
-]
-
-const namingRef = [
-  { type: 'Collections', prefix: 'COL_' },
-  { type: 'Meshes', prefix: 'SM_' },
-  { type: 'Materials', prefix: 'MAT_' },
-  { type: 'Textures', prefix: 'T_' },
-  { type: 'Animations', prefix: 'AN_' },
-  { type: 'Armatures', prefix: 'ARM_' },
-  { type: 'Geo Node Groups', prefix: 'GN_' },
-  { type: 'Cameras', prefix: 'CAM_' },
-  { type: 'Lights', prefix: 'LGT_' },
-]
+import {
+  SKILL_COUNT,
+  REF_COUNT,
+  SITE_VERSION,
+  skillCategories,
+  workflows,
+  namingRef,
+} from '@/lib/skills-data'
 
 export default function SkillsPage() {
   return (
     <div className="max-w-4xl space-y-16 pb-16">
-      {/* Header */}
       <div className="space-y-3">
-        <Badge>Skills Guide</Badge>
+        <div className="flex flex-wrap gap-2">
+          <Badge>Skills Guide</Badge>
+          <Badge variant="muted">v{SITE_VERSION}</Badge>
+          <Badge variant="muted">{SKILL_COUNT} skills</Badge>
+          <Badge variant="muted">{REF_COUNT}+ refs</Badge>
+        </div>
         <h1 className="text-4xl font-bold tracking-tight">Skills Guide</h1>
         <p className="text-lg text-muted-foreground">
-          Decision trees, workflow combinations, and the full skill index for the Blender Skills pack.
-          Start any production task with <strong>blender-director</strong>.
+          Full catalog of {SKILL_COUNT} specialist skills with decision trees and workflow pipelines.
+          Start complex work with <strong>blender-director</strong>. Genre, style, world, and mood packs
+          include deeper subtype docs under each skill&apos;s <code>references/</code> folder.
         </p>
       </div>
 
-      {/* Decision Tree */}
+      {/* Decision trees */}
       <section className="space-y-5" id="decision-tree">
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Decision Trees</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm">What are you making?</CardTitle>
             </CardHeader>
             <CardContent className="pt-0 space-y-1 text-xs font-mono text-muted-foreground">
-              <p>Hard surface prop → <span className="text-primary">hard-surface</span></p>
-              <p>Environment/level → <span className="text-primary">environment-artist</span></p>
-              <p>Human character → <span className="text-primary">character-artist</span></p>
-              <p>Creature/monster → <span className="text-primary">creature-artist</span></p>
-              <p>Procedural → <span className="text-primary">geometry-nodes</span></p>
+              <p>Everyday prop → <span className="text-primary">prop-artist</span></p>
+              <p>Hard surface / weapon → <span className="text-primary">hard-surface</span></p>
+              <p>Vehicle / mech → <span className="text-primary">vehicle-artist</span></p>
+              <p>Environment → <span className="text-primary">environment-artist</span></p>
+              <p>Vegetation → <span className="text-primary">vegetation-artist</span></p>
+              <p>Character → <span className="text-primary">character-artist</span></p>
+              <p>Creature → <span className="text-primary">creature-artist</span></p>
+              <p>FX / destruction → <span className="text-primary">vfx-fx / physics-sim</span></p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm">What style?</CardTitle>
+              <CardTitle className="text-sm">Style / mood / world?</CardTitle>
             </CardHeader>
             <CardContent className="pt-0 space-y-1 text-xs font-mono text-muted-foreground">
-              <p>Horror → <span className="text-primary">horror-style</span></p>
-              <p>Retro/low poly → <span className="text-primary">lowpoly-style</span></p>
-              <p>Cartoon/NPR → <span className="text-primary">stylized-style</span></p>
-              <p>Photoreal → <span className="text-primary">realistic-style</span></p>
+              <p>Anime / cel → <span className="text-primary">anime-style</span></p>
+              <p>Pixel / HD-2D → <span className="text-primary">pixel-art / hd-2d</span></p>
+              <p>Liminal / Backrooms → <span className="text-primary">liminal-space-style</span></p>
+              <p>Cyberpunk / steampunk → <span className="text-primary">sci-fi-punk-worlds</span></p>
+              <p>Cozy / neon / gritty → <span className="text-primary">mood skills</span></p>
+              <p>PS1–PS5 / VHS → <span className="text-primary">visual-console-eras</span></p>
               <p>Unspecified → <span className="text-primary">blender-director</span></p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm">Pipeline stage?</CardTitle>
+              <CardTitle className="text-sm">Gameplay genre?</CardTitle>
             </CardHeader>
             <CardContent className="pt-0 space-y-1 text-xs font-mono text-muted-foreground">
-              <p>Starting fresh → <span className="text-primary">blender-director</span></p>
-              <p>Sculpt done → <span className="text-primary">retopology</span></p>
-              <p>Topo done → <span className="text-primary">uv-workflow</span></p>
-              <p>Look dev → <span className="text-primary">lighting → rendering</span></p>
-              <p>Ready to ship → <span className="text-primary">asset-optimization</span></p>
+              <p>FPS / BR / extraction → <span className="text-primary">genre-shooter</span></p>
+              <p>RPG / JRPG / MMO → <span className="text-primary">genre-rpg</span></p>
+              <p>Soulslike → <span className="text-primary">genre-soulslike</span></p>
+              <p>Strategy / city sim → <span className="text-primary">genre-strategy-sim</span></p>
+              <p>Metroidvania / roguelike → <span className="text-primary">genre-metroidvania-roguelike</span></p>
+              <p>Open world → <span className="text-primary">genre-open-world-sandbox</span></p>
+              <p>VN / walking sim → <span className="text-primary">genre-narrative-vn</span></p>
             </CardContent>
           </Card>
         </div>
@@ -268,9 +88,7 @@ export default function SkillsPage() {
                 {wf.pipeline.map((step, i) => (
                   <span key={i} className="flex items-center gap-1.5">
                     <span className="bg-muted rounded px-2 py-1 text-muted-foreground">{step}</span>
-                    {i < wf.pipeline.length - 1 && (
-                      <span className="text-muted-foreground/40">→</span>
-                    )}
+                    {i < wf.pipeline.length - 1 && <span className="text-muted-foreground/40">→</span>}
                   </span>
                 ))}
               </div>
@@ -279,13 +97,33 @@ export default function SkillsPage() {
         </div>
       </section>
 
-      {/* Skill Index */}
+      {/* Pack note */}
+      <section className="rounded-xl border bg-primary/5 p-5 space-y-2" id="packs">
+        <h2 className="text-lg font-semibold">How genre &amp; style packs work</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Long subtype lists (steampunk, Backrooms, JRPG, vaporwave, Silent Hill, etc.) are covered as
+          <strong> pack skills + reference docs</strong> — not hundreds of one-line skills.
+          Example: ask for steampunk → agent loads <code>sci-fi-punk-worlds</code> → opens{' '}
+          <code>references/steampunk.md</code>. Ask for Backrooms → <code>liminal-space-style</code> →{' '}
+          <code>references/backrooms.md</code>.
+        </p>
+      </section>
+
+      {/* Skill index */}
       <section className="space-y-10">
-        <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Skill Index</h2>
+        <div className="space-y-2">
+          <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Skill Index ({SKILL_COUNT})</h2>
+          <p className="text-sm text-muted-foreground">
+            Every skill below is available in both <code>.claude/skills/</code> and <code>.cursor/skills/</code>.
+          </p>
+        </div>
         {skillCategories.map((category) => (
-          <div key={category.id} id={category.id} className="space-y-4">
+          <div key={category.id} id={category.id} className="space-y-4 scroll-mt-20">
             <div>
-              <h3 className="text-xl font-semibold">{category.title}</h3>
+              <h3 className="text-xl font-semibold">
+                {category.title}{' '}
+                <span className="text-sm font-normal text-muted-foreground">({category.skills.length})</span>
+              </h3>
               <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -293,7 +131,7 @@ export default function SkillsPage() {
                 <Card key={skill.name} className="hover:shadow-md transition-shadow">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-mono text-primary">{skill.name}</CardTitle>
-                    <CardDescription className="text-xs">{skill.desc}</CardDescription>
+                    <CardDescription className="text-xs leading-relaxed">{skill.desc}</CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="flex flex-wrap gap-1">
@@ -311,7 +149,7 @@ export default function SkillsPage() {
         ))}
       </section>
 
-      {/* Naming Conventions */}
+      {/* Naming */}
       <section className="space-y-4" id="naming">
         <h2 className="text-2xl font-bold tracking-tight border-b pb-2">Naming Conventions</h2>
         <div className="overflow-x-auto rounded-lg border">
@@ -329,7 +167,11 @@ export default function SkillsPage() {
                   <td className="px-4 py-2.5 text-muted-foreground">{row.type}</td>
                   <td className="px-4 py-2.5 font-mono text-primary font-medium">{row.prefix}</td>
                   <td className="px-4 py-2.5 font-mono text-xs text-muted-foreground">
-                    {row.prefix}Weapon_Rifle_A
+                    {row.prefix === 'UCX_'
+                      ? 'UCX_SM_Crate_01'
+                      : row.prefix === 'FX_'
+                        ? 'FX_Emit_Sparks'
+                        : `${row.prefix}Weapon_Rifle_A`}
                   </td>
                 </tr>
               ))}
@@ -346,10 +188,12 @@ export default function SkillsPage() {
             '"How do I use Blender?" — Skills assume production context, not tutorials.',
             'Attaching a reference image without asking the agent to analyze and match it.',
             'Skipping blender-director on complex multi-step tasks.',
+            'Mixing cyberpunk + steampunk + solarpunk without an intentional mashup brief.',
+            'Declaring a genre without loading that genre skill’s readability rules.',
             'Adding greebles before establishing silhouette and panel-break depth.',
             'Keyframing emission on shared hull materials (causes white blowout in export).',
             'Manual UI steps when Blender MCP is connected.',
-            'Exporting without running asset-optimization validation.',
+            'Exporting without asset-optimization / qa-review validation.',
             'Declaring done on reference tasks without screenshot comparison.',
           ].map((item) => (
             <div key={item} className="flex gap-2.5 text-sm">

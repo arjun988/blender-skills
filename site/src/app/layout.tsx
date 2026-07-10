@@ -9,10 +9,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Blender Skills',
   description:
-    '23 Specialized Skills for Blender Artists. Transform Claude Code and Cursor into your Senior Technical Art team.',
+    '94 specialized Blender skills for Cursor, Claude Code, Kiro, and Codex. MCP-first technical art pipelines — modeling, genre/style packs, VFX, and engine export.',
   openGraph: {
-    title: 'Blender Skills',
-    description: '23 Specialized Skills for Blender Artists.',
+    title: 'Blender Skills — 94 Skills for Cursor, Claude Code, Kiro & Codex',
+    description:
+      '94 specialized Blender skills with 175+ references. Production pipelines via Blender MCP.',
     images: ['/banner.png'],
   },
 }

@@ -1,16 +1,7 @@
 export const navItems = [
-  {
-    title: 'Home',
-    href: '/',
-  },
-  {
-    title: 'Getting Started',
-    href: '/getting-started',
-  },
-  {
-    title: 'Skills Guide',
-    href: '/skills',
-  },
+  { title: 'Home', href: '/' },
+  { title: 'Getting Started', href: '/getting-started' },
+  { title: 'Skills Guide', href: '/skills' },
 ]
 
 export const sidebarSections = [
@@ -23,61 +14,24 @@ export const sidebarSections = [
   },
   {
     title: 'Reference',
-    items: [
-      { title: 'Skills Guide', href: '/skills' },
-    ],
+    items: [{ title: 'Skills Guide', href: '/skills' }],
   },
   {
-    title: 'Orchestration',
+    title: 'Skill Categories',
     items: [
-      { title: 'blender-director', href: '/skills#orchestration' },
-    ],
-  },
-  {
-    title: 'Modeling',
-    items: [
-      { title: 'blender-modeler', href: '/skills#modeling' },
-      { title: 'hard-surface', href: '/skills#modeling' },
-      { title: 'environment-artist', href: '/skills#modeling' },
-      { title: 'character-artist', href: '/skills#modeling' },
-      { title: 'creature-artist', href: '/skills#modeling' },
-    ],
-  },
-  {
-    title: 'Production Workflow',
-    items: [
-      { title: 'sculpting', href: '/skills#workflow' },
-      { title: 'retopology', href: '/skills#workflow' },
-      { title: 'uv-workflow', href: '/skills#workflow' },
-      { title: 'materials', href: '/skills#workflow' },
-      { title: 'texture-workflow', href: '/skills#workflow' },
-    ],
-  },
-  {
-    title: 'Technical',
-    items: [
-      { title: 'geometry-nodes', href: '/skills#technical' },
-      { title: 'lighting', href: '/skills#technical' },
-      { title: 'rendering', href: '/skills#technical' },
-      { title: 'animation', href: '/skills#technical' },
-      { title: 'rigging', href: '/skills#technical' },
-    ],
-  },
-  {
-    title: 'Pipeline',
-    items: [
-      { title: 'procedural-modeling', href: '/skills#pipeline' },
-      { title: 'asset-optimization', href: '/skills#pipeline' },
-      { title: 'export-pipeline', href: '/skills#pipeline' },
-    ],
-  },
-  {
-    title: 'Style',
-    items: [
-      { title: 'horror-style', href: '/skills#style' },
-      { title: 'lowpoly-style', href: '/skills#style' },
-      { title: 'stylized-style', href: '/skills#style' },
-      { title: 'realistic-style', href: '/skills#style' },
+      { title: 'Orchestration', href: '/skills#orchestration' },
+      { title: 'Modeling', href: '/skills#modeling' },
+      { title: 'Production Workflow', href: '/skills#workflow' },
+      { title: 'Technical', href: '/skills#technical' },
+      { title: 'Pipeline', href: '/skills#pipeline' },
+      { title: 'Core Styles', href: '/skills#style-core' },
+      { title: 'Extended Styles', href: '/skills#style-extended' },
+      { title: 'Horror Packs', href: '/skills#horror-packs' },
+      { title: 'Worlds & Themes', href: '/skills#worlds' },
+      { title: 'Moods', href: '/skills#moods' },
+      { title: 'Gameplay Genres', href: '/skills#genres' },
+      { title: 'Visual Eras', href: '/skills#eras' },
+      { title: 'Workflows', href: '/skills#workflows' },
     ],
   },
   {

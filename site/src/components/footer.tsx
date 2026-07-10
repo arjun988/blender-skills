@@ -1,16 +1,18 @@
 import Link from 'next/link'
 import { Github } from 'lucide-react'
+import { SITE_VERSION, SKILL_COUNT } from '@/lib/skills-data'
 
 export function Footer() {
   return (
     <footer className="border-t py-8">
       <div className="max-w-screen-xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-        <div className="flex items-center gap-2">
-          <div className="h-5 w-5 rounded bg-primary flex items-center justify-center">
+        <div className="flex items-center gap-2 text-center md:text-left">
+          <div className="h-5 w-5 rounded bg-primary flex items-center justify-center shrink-0">
             <span className="text-primary-foreground text-[10px] font-black">B</span>
           </div>
           <span>
-            <strong className="text-foreground">Blender Skills</strong> — Built for Claude Code and Cursor
+            <strong className="text-foreground">Blender Skills</strong> — {SKILL_COUNT} skills for
+            Cursor, Claude Code, Kiro &amp; Codex
           </span>
         </div>
 
@@ -32,7 +34,7 @@ export function Footer() {
           </Link>
         </div>
 
-        <p>MIT License · v1.1.0</p>
+        <p>MIT License · v{SITE_VERSION}</p>
       </div>
     </footer>
   )
