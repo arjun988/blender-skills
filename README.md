@@ -5,13 +5,16 @@
 # Blender Skills
 
 **94 Specialized Skills for Blender Artists.**
-**Transform Claude Code and Cursor into your Senior Technical Art team — not a tutorial bot.**
+**Transform Cursor, Claude Code, Kiro, and Codex into your Senior Technical Art team — not a tutorial bot.**
 
 [![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)](version.json)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-94-orange.svg)](.claude/skills/)
 [![Blender MCP](https://img.shields.io/badge/Blender_MCP-integrated-blueviolet.svg)](docs/BLENDER_MCP_SETUP.md)
+[![Cursor](https://img.shields.io/badge/Cursor-skills-blue.svg)](https://cursor.com)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-black.svg)](https://docs.anthropic.com/en/docs/claude-code)
+[![Kiro](https://img.shields.io/badge/Kiro-compatible-purple.svg)](https://kiro.dev)
+[![Codex](https://img.shields.io/badge/Codex-compatible-green.svg)](https://openai.com/codex)
 [![Website](https://img.shields.io/badge/website-blender--skills.vercel.app-orange.svg)](https://blender-skills.vercel.app/)
 
 </div>
@@ -21,7 +24,9 @@
 ## Quick Start
 
 > **Marketplace listing is currently under review by Anthropic.**
-> Install directly from GitHub in the meantime:
+> Install directly from GitHub in the meantime.
+
+Works with **Cursor**, **Claude Code**, **Kiro**, and **Codex** — same skill pack, Blender MCP execution.
 
 **Claude Code**
 ```bash
@@ -33,6 +38,19 @@ cp -r blender-skills/.claude/skills /path/to/your/project/.claude/skills/
 ```powershell
 git clone https://github.com/arjun988/blender-skills.git
 Copy-Item -Recurse -Force "blender-skills\.claude\skills\*" ".cursor\skills\"
+```
+
+**Kiro**
+```bash
+# Copy skill folders into your Kiro skills directory, then restart Kiro
+cp -r blender-skills/.claude/skills/* /path/to/kiro/skills/
+```
+
+**Codex**
+```bash
+# Mount or copy skills into your Codex skills path
+cp -r blender-skills/.claude/skills/* /path/to/codex/skills/
+# or: ln -s /path/to/blender-skills/.claude/skills /path/to/codex/skills/blender-skills
 ```
 
 For all installation methods and first steps, see the **[Quick Start Guide](https://blender-skills.vercel.app/getting-started/)**.
@@ -102,7 +120,7 @@ Full paths and workflows: **[SKILLS_GUIDE.md](SKILLS_GUIDE.md)**.
 Every skill executes **directly in Blender** via MCP — no UI walkthroughs, no manual steps.
 
 ```
-Blender (running) ← BlenderMCP addon ← Claude Code / Cursor
+Blender (running) ← BlenderMCP addon ← Cursor / Claude Code / Kiro / Codex
 ```
 
 **Setup in 4 steps:**
@@ -110,14 +128,16 @@ Blender (running) ← BlenderMCP addon ← Claude Code / Cursor
 1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/)
 2. Install the [BlenderMCP addon](https://github.com/ahujasid/blender-mcp) in Blender
 3. Blender sidebar `N` → **BlenderMCP** → **Connect to Claude**
-4. Restart Cursor — `.cursor/mcp.json` is preconfigured
+4. Restart your agent — Cursor ships `.cursor/mcp.json`; Claude Code uses `.mcp.json`
 
 Full guide: **[docs/BLENDER_MCP_SETUP.md](docs/BLENDER_MCP_SETUP.md)**
 
-| Config File | Client |
-|-------------|--------|
-| `.cursor/mcp.json` | Cursor (project) |
-| `.mcp.json` | Claude Code (project) |
+| Config / Path | Client |
+|---------------|--------|
+| `.cursor/mcp.json` + `.cursor/skills/` | Cursor |
+| `.mcp.json` + `.claude/skills/` | Claude Code |
+| Kiro skills dir + Blender MCP | Kiro |
+| Codex skills path + Blender MCP | Codex |
 
 ---
 
@@ -172,14 +192,18 @@ Every skill in this pack:
 
 ```
 .claude-plugin/           # Claude Code plugin manifest
-.claude/skills/           # 23 skills + 40 shared reference files
+.claude/skills/           # 94 skills + 175+ reference files
   ├── blender-director/
   ├── hard-surface/
-  ├── environment-artist/
-  ├── ... (20 more skills)
+  ├── prop-artist/
+  ├── genre-shooter/
+  ├── sci-fi-punk-worlds/
+  ├── ... (89 more skills)
   └── references/         # Asset pipeline, naming, MCP tools, checklists
+.cursor/skills/           # Synced mirror for Cursor
 .cursor/mcp.json          # Blender MCP config (Cursor)
 .mcp.json                 # Blender MCP config (Claude Code)
+site/                     # Website (blender-skills.vercel.app)
 docs/
   └── BLENDER_MCP_SETUP.md
 ```
@@ -228,7 +252,7 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Built for Claude Code and Cursor** | **Blender MCP Integration** | **23 Skills** | **40 Reference Files**
+**Built for Cursor, Claude Code, Kiro & Codex** | **Blender MCP** | **94 Skills** | **175+ Reference Files**
 
 Inspired by [jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
 
