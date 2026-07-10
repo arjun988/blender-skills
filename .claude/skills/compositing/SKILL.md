@@ -77,3 +77,10 @@ Combined
 - Over-glare every bright pixel
 - Flatten multilayer to JPEG as only archive
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Pass Stack | `references/pass-stack.md` | When needed |
+| Grade Presets | `references/grade-presets.md` | When needed |
+| Delivery Outputs | `references/delivery-outputs.md` | When needed |

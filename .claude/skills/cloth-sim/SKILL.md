@@ -76,3 +76,10 @@ Tune mass and air viscosity for scale. Always run a settle pre-roll.
 - Skip pre-roll (starts mid-air / exploding)
 - Export raw unstable caches
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Cloth Settings Presets | `references/cloth-settings-presets.md` | When needed |
+| Pin And Collide | `references/pin-and-collide.md` | When needed |
+| Bake Targets | `references/bake-targets.md` | When needed |

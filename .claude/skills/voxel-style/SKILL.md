@@ -65,3 +65,9 @@ Choose voxel size → Block occupancy → Merge cubes
 - Smooth shading that hides block edges (unless intentional glass)
 - Organic sculpt detail
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Voxel Grid | `references/voxel-grid.md` | When needed |
+| Voxel Characters | `references/voxel-characters.md` | When needed |

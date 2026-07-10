@@ -81,3 +81,9 @@ UCX_SM_Asset_02
 - Use render LOD0 as physics mesh by default
 - Non-convex UCX for Unreal auto-convex workflows
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Collider Recipes | `references/collider-recipes.md` | When needed |
+| Engine Naming | `references/engine-naming.md` | When needed |

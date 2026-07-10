@@ -78,3 +78,8 @@ Animation: include when needed
 ### MUST NOT DO
 - Rely on Blender-only shader nodes that do not export
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Godot Checklist | `references/godot-checklist.md` | When needed |

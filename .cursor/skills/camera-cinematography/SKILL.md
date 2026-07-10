@@ -84,3 +84,10 @@ Animate camera + target empties; prefer slow ease-in/out.
 - Animate FOV wildly unless motivated
 - Crop critical silhouette out of frame
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Lens And Composition | `references/lens-and-composition.md` | When needed |
+| Camera Move Library | `references/camera-move-library.md` | When needed |
+| Dof Guide | `references/dof-guide.md` | When needed |

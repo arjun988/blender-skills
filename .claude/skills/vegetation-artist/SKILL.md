@@ -68,3 +68,10 @@ Trunk/branch blockout → Branch levels → Leaf/card placement
 - Unique leaf mesh per leaf on game trees
 - Skip impostor for dense forests
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Leaf Atlas | `references/leaf-atlas.md` | When needed |
+| Tree Lod | `references/tree-lod.md` | When needed |
+| Wind Vertex Colors | `references/wind-vertex-colors.md` | When needed |

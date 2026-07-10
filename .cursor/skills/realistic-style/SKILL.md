@@ -134,3 +134,7 @@ Use photographic reference for albedo; never guess saturated colors.
 |-------|-----------|-----------|
 | PBR values | `references/pbr-values.md` | Material setup |
 | Scan cleanup | `references/scan-cleanup.md` | Photogrammetry |
+
+## Related
+- Photoreal path stays here; for era crunch use `visual-console-eras` or `lowpoly-style`.
+

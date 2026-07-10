@@ -82,3 +82,10 @@ Simplify collision meshes → Assign rigid/soft bodies
 - Unbounded shard counts
 - Leave sims unbaked for final renders
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Rigid Body Presets | `references/rigid-body-presets.md` | When needed |
+| Destruction Pipeline | `references/destruction-pipeline.md` | When needed |
+| Sim Bake Checklist | `references/sim-bake-checklist.md` | When needed |

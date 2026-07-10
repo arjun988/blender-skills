@@ -78,3 +78,10 @@ Brief (silhouette + timing) → Proxy emitter → Sim/GN prototype
 - Unbounded particle counts
 - Skip timing brief (start/peak/end frames)
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Fx Timing Brief | `references/fx-timing-brief.md` | When needed |
+| Volume Domain Rules | `references/volume-domain-rules.md` | When needed |
+| Game Fx Export | `references/game-fx-export.md` | When needed |

@@ -63,3 +63,9 @@ CAD/scale check → Greybox → Final modeling → Materials
 - Game lowpoly shortcuts on hero archviz plates
 - Over-saturate materials
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Archviz Camera | `references/archviz-camera.md` | When needed |
+| Archviz Lighting | `references/archviz-lighting.md` | When needed |

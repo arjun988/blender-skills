@@ -66,3 +66,9 @@ Hard color breaks. Clean silhouettes. Cel shading. Anime proportion language.
 - Full PBR roughness noise as primary look
 - Over-subsurface that melts cel breaks
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Cel Shader Setup | `references/cel-shader-setup.md` | When needed |
+| Anime Proportion | `references/anime-proportion.md` | When needed |

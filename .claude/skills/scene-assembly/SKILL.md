@@ -84,3 +84,9 @@ Prefer non-destructive linking for repeated kits.
 - Apply library overrides casually without need
 - Duplicate hero meshes instead of instancing
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Collection Template | `references/collection-template.md` | When needed |
+| Linking Overrides | `references/linking-overrides.md` | When needed |

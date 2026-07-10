@@ -101,12 +101,58 @@ Before any work, determine:
 | Godot-specific export | godot-export | export-pipeline, lod-pipeline, collision-proxy |
 | QA gate, screenshot review, ship check | qa-review | asset-optimization, lookdev, blender-director |
 | Psychological horror aesthetic | horror-style | lighting, environment-artist, set-dressing |
+| Cosmic / Lovecraftian / eldritch | cosmic-eldritch-horror | horror-style, creature-artist, vfx-fx |
+| Body horror / mutation | body-horror-style | horror-style, creature-artist, sculpting |
+| Analog / VHS / found footage | analog-found-footage-horror | compositing, camera-cinematography, horror-style |
+| Liminal / Backrooms / empty mall | liminal-space-style | environment-artist, horror-style, lighting |
+| Folk horror / rural ritual | folk-horror-style | horror-style, vegetation-artist, set-dressing |
+| Mascot / puppet horror | mascot-puppet-horror | horror-style, stop-motion-craft-style, character-artist |
+| Dreamcore / weirdcore | dream-weirdcore-style | liminal-space-style, compositing |
+| Indie horror refs (SH / FtF / Puppet Combo) | indie-horror-aesthetics | horror-style, psx-horror-style, lighting |
 | PSX/PS1 horror crunch | psx-horror-style | horror-style, lowpoly-style, lighting, compositing |
-| PS1/PS2, Lethal Company style | lowpoly-style | environment-artist, materials |
+| PS1/PS2, Lethal Company style | lowpoly-style | environment-artist, materials, visual-console-eras |
 | Anime / cel / hard color breaks | anime-style | stylized-style, materials, rendering, character-artist |
+| Manga value / screentone language | manga-style | anime-style, comic-book-style, compositing |
+| Cartoon graphic shapes | cartoon-style | stylized-style, character-artist |
+| Comic book / ink / halftone | comic-book-style | stylized-style, compositing |
+| Pixel / texel-locked | pixel-art-style | retro-8bit-style, retro-16bit-style, hd-2d-style |
+| HD-2D hybrid | hd-2d-style | pixel-art-style, environment-artist, lighting |
+| Hand-painted textures | hand-painted-style | stylized-style, texture-workflow |
+| Watercolor / oil painterly | painterly-style | hand-painted-style, compositing |
+| Claymation / paper craft / stop-mo | stop-motion-craft-style | materials, character-artist |
+| Chibi / SD proportions | chibi-style | anime-style, cartoon-style, character-artist |
+| Noir / neo-noir | noir-style | lighting, camera-cinematography, compositing |
+| Minimalist / abstract reduce | minimalist-style | stylized-style, lookdev |
+| Vector-flat graphic | vector-style | minimalist-style, cartoon-style |
 | Voxel / Minecraft-adjacent | voxel-style | lowpoly-style, environment-artist, geometry-nodes |
-| Isometric / strategy / diorama | isometric-style | camera-cinematography, environment-artist, scene-assembly |
-| Exaggerated, NPR, hand-painted | stylized-style | materials, rendering, anime-style |
+| Isometric / strategy / diorama | isometric-style | camera-cinematography, environment-artist, genre-strategy-sim |
+| Frutiger Aero glossy 2000s | frutiger-aero-style | materials, lookdev, neon-retrofuturism |
+| Neon / vaporwave / synthwave | neon-retrofuturism | sci-fi-punk-worlds, lighting, compositing |
+| Cozy / cute / wholesome | cozy-wholesome-mood | stylized-style, lighting, set-dressing |
+| Dark / gritty / decayed / industrial | dark-gritty-mood | horror-style, materials, environment-artist |
+| Dreamlike / surreal / mystical | dream-surreal-mood | dream-weirdcore-style, lighting, vfx-fx |
+| Brutalist concrete mood | brutalist-mood | archviz, environment-artist, materials |
+| Fantasy / medieval / dark fantasy | fantasy-worlds | environment-artist, prop-artist, creature-artist |
+| Sci-fi / cyberpunk / steampunk / punks | sci-fi-punk-worlds | hard-surface, environment-artist, vehicle-artist |
+| Historical / western / samurai / WW | historical-worlds | environment-artist, prop-artist, character-artist |
+| Post-apoc / dystopia / zombie | apocalypse-worlds | environment-artist, prop-artist, vehicle-artist |
+| Underwater / desert / arctic / jungle | biome-worlds | environment-artist, vegetation-artist, lighting |
+| Character race/role archetypes | character-archetypes | character-artist, creature-artist |
+| PS1–PS5 / CRT / VHS / DOS eras | visual-console-eras | lowpoly-style, compositing, realistic-style |
+| Action / brawler / fighting arenas | genre-action-combat | environment-artist, vfx-fx |
+| FPS / TPS / BR / extraction | genre-shooter | environment-artist, hard-surface, collision-proxy |
+| RPG / JRPG / CRPG / ARPG / MMO | genre-rpg | fantasy-worlds, environment-artist, character-artist |
+| Survival / survival-horror gameplay | genre-survival | environment-artist, prop-artist, horror-style |
+| Stealth spaces | genre-stealth | environment-artist, lighting |
+| Puzzle / platformer | genre-puzzle-platformer | environment-artist, prop-artist |
+| Metroidvania / roguelike / roguelite | genre-metroidvania-roguelike | environment-artist, scene-assembly |
+| Soulslike monumental dread | genre-soulslike | dark-gritty-mood, fantasy-worlds, lighting |
+| Strategy / sim / city / colony / MOBA | genre-strategy-sim | isometric-style, environment-artist |
+| Racing / sports | genre-racing-sports | vehicle-artist, environment-artist |
+| VN / walking sim / interactive movie | genre-narrative-vn | camera-cinematography, lighting, set-dressing |
+| Card / party / idle / rhythm / edu | genre-card-party-idle | prop-artist, camera-cinematography |
+| Open world / sandbox | genre-open-world-sandbox | biome-worlds, environment-artist, lod-pipeline |
+| Exaggerated, NPR, hand-painted broad | stylized-style | materials, rendering, anime-style |
 | Photoreal, scan cleanup, AAA PBR | realistic-style | texture-workflow, rendering, lookdev |
 | **Reference photo / concept art attached** | **reference-image-match** | blender-director → discipline skill → style → materials → lighting → rendering |
 

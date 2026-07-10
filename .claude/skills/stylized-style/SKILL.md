@@ -133,3 +133,8 @@ Coordinate with rendering skill:
 |-------|-----------|-----------|
 | NPR shader setup | `references/npr-shaders.md` | Rendering setup |
 | Color palettes | `references/palette-examples.md` | Art direction |
+
+## Related Style Packs
+- `cartoon-style`, `anime-style`, `comic-book-style`, `manga-style`, `hand-painted-style`, `painterly-style`
+- `chibi-style`, `pixel-art-style`, `hd-2d-style`, `stop-motion-craft-style`
+

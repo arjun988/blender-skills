@@ -1,12 +1,14 @@
 # Blender Skills Guide
 
-Decision trees and workflow combinations for the Blender Skills Pack.
+Decision trees and workflow combinations for the Blender Skills Pack (**94 skills**).
 
 ## Start Here
 
 For any Blender asset task, **blender-director** analyzes the request and routes to specialist skills. You can also invoke skills directly.
 
 **User attached a reference photo?** Start with **blender-director** → read `references/reference-image-match.md` → fill `references/reference-analysis-template.md` before any Blender work.
+
+**Genre / style / mood / world?** Director routes to a pack skill; open that skill’s `references/` for subtype details (e.g. steampunk under `sci-fi-punk-worlds`, Backrooms under `liminal-space-style`).
 
 ## Skill Index
 
@@ -22,51 +24,52 @@ For any Blender asset task, **blender-director** analyzes the request and routes
 - **vegetation-artist** — Trees, plants, grass, foliage cards
 - **character-artist** — Human anatomy, clothing, facial topology
 - **creature-artist** — Monsters, fantasy, organic design
+- **character-archetypes** — Races/roles (elf, mecha, knight, vampire, …)
 
 ### Production Workflow
-- **sculpting** — High-frequency detail, multires, alphas
-- **retopology** — Animation-ready topology, quad flow
-- **uv-workflow** — Seams, packing, texel density, UDIM
-- **materials** — PBR, procedural, master materials
-- **texture-workflow** — Baking, atlases, ORM packing
-- **hair-groom** — Curves/particles hair, game hair cards
-- **cloth-sim** — Garment sim, pins, shape-key/cache bake
-- **lookdev** — Material + light + camera review loop
+- **sculpting** · **retopology** · **uv-workflow** · **materials** · **texture-workflow**
+- **hair-groom** · **cloth-sim** · **lookdev**
 
 ### Technical
-- **geometry-nodes** — Scatter, procedural systems, node groups
-- **lighting** — Cinematic, horror, HDRI, volumetrics
-- **camera-cinematography** — Framing, lenses, camera animation
-- **rendering** — Cycles/Eevee, passes, color management
-- **compositing** — Beauty stack, grade, passes
-- **animation** — Locomotion, mechanical, NLA export
-- **rigging** — IK/FK, weights, mechanical constraints
-- **vfx-fx** — Smoke, fire, particles, GN FX
-- **physics-sim** — Rigid/soft body, destruction
+- **geometry-nodes** · **lighting** · **camera-cinematography** · **rendering** · **compositing**
+- **animation** · **rigging** · **vfx-fx** · **physics-sim**
 
 ### Pipeline
-- **procedural-modeling** — Rocks, roads, buildings, cables
-- **scene-assembly** — Layout, linking, overrides, large scenes
-- **set-dressing** — Narrative prop placement, clutter control
-- **asset-optimization** — Polycount, cleanup, validation gate
-- **lod-pipeline** — LOD generation and validation
-- **collision-proxy** — UCX/convex/simple colliders
-- **export-pipeline** — Generic FBX/GLTF/USD export
-- **unity-export** — Unity-specific delivery
-- **unreal-export** — Unreal-specific delivery (UCX, LODs)
-- **godot-export** — Godot GLTF/GLB delivery
-- **qa-review** — Screenshot + checklist ship gate
-- **archviz** — Architectural visualization stills/walkthroughs
+- **procedural-modeling** · **scene-assembly** · **set-dressing** · **asset-optimization**
+- **lod-pipeline** · **collision-proxy** · **export-pipeline**
+- **unity-export** · **unreal-export** · **godot-export** · **qa-review** · **archviz**
 
-### Style Specialists
-- **horror-style** — Psychological horror, industrial decay
-- **psx-horror-style** — PS1/PSX crunchy horror
-- **lowpoly-style** — PS1/PS2, Lethal Company aesthetic
-- **anime-style** — Cel/toon, hard color breaks
-- **voxel-style** — Minecraft-adjacent block aesthetic
-- **isometric-style** — Diorama / strategy-game iso rules
-- **stylized-style** — NPR, hand-painted, shape language
-- **realistic-style** — AAA PBR, photogrammetry, cinematic
+### Core Style Specialists
+- **horror-style** · **psx-horror-style** · **lowpoly-style** · **anime-style** · **voxel-style**
+- **isometric-style** · **stylized-style** · **realistic-style**
+
+### Extended Art Styles
+- **cartoon-style** · **comic-book-style** · **manga-style** · **pixel-art-style**
+- **hand-painted-style** · **painterly-style** (watercolor/oil) · **stop-motion-craft-style**
+- **chibi-style** · **noir-style** · **minimalist-style** · **vector-style**
+- **retro-8bit-style** · **retro-16bit-style** · **hd-2d-style** · **frutiger-aero-style**
+
+### Horror Packs
+- **cosmic-eldritch-horror** · **body-horror-style** · **analog-found-footage-horror**
+- **liminal-space-style** · **folk-horror-style** · **mascot-puppet-horror**
+- **dream-weirdcore-style** · **indie-horror-aesthetics**
+
+### Worlds / Themes
+- **fantasy-worlds** · **sci-fi-punk-worlds** · **historical-worlds**
+- **apocalypse-worlds** · **biome-worlds**
+
+### Mood / Atmosphere
+- **cozy-wholesome-mood** · **dark-gritty-mood** · **dream-surreal-mood**
+- **neon-retrofuturism** · **brutalist-mood**
+
+### Gameplay Genre Art Direction
+- **genre-action-combat** · **genre-shooter** · **genre-rpg** · **genre-survival**
+- **genre-stealth** · **genre-puzzle-platformer** · **genre-metroidvania-roguelike**
+- **genre-soulslike** · **genre-strategy-sim** · **genre-racing-sports**
+- **genre-narrative-vn** · **genre-card-party-idle** · **genre-open-world-sandbox**
+
+### Visual Eras
+- **visual-console-eras** — PS1–PS5, arcade, DOS, CRT, VHS, film grain
 
 ## Decision Trees
 
@@ -78,7 +81,7 @@ Hard surface sci-fi / weapon / industrial → hard-surface
 Vehicle / mech / ship / aircraft → vehicle-artist
 Environment / level geo → environment-artist
 Vegetation / foliage → vegetation-artist
-Human character → character-artist (+ hair-groom / cloth-sim)
+Human character → character-artist (+ hair-groom / cloth-sim / character-archetypes)
 Creature/monster → creature-artist
 Archviz space → archviz
 Procedural system → geometry-nodes + procedural-modeling
@@ -86,24 +89,22 @@ FX / destruction → vfx-fx / physics-sim
 Large scene layout → scene-assembly + set-dressing
 ```
 
-### What style?
+### What style / mood / world?
 
 ```
-Horror → horror-style (+ lighting)
-PSX / retro horror → psx-horror-style
-Retro/low poly → lowpoly-style
-Anime / cel → anime-style
-Voxel / blocky → voxel-style
-Isometric / strategy → isometric-style
-Cartoon/NPR → stylized-style
-Photoreal/AAA → realistic-style
-Unspecified → blender-director decides from context
+Art style named (anime, pixel, noir, HD-2D, …) → matching *-style skill
+Horror subtype (cosmic, liminal, folk, analog, …) → horror pack skill
+World theme (cyberpunk, medieval, wasteland, jungle, …) → worlds skill + open its references/
+Mood (cozy, gritty, vaporwave, brutalist, …) → mood skill
+Console/media era (PS1, CRT, VHS, …) → visual-console-eras
+Gameplay genre (FPS, JRPG, soulslike, city builder, …) → genre-* skill
+Unspecified → blender-director infers from context
 ```
 
 ### Pipeline stage?
 
 ```
-Starting fresh → blender-director → modeling skill
+Starting fresh → blender-director → modeling + style/world/genre packs
 Sculpt done → retopology
 Topology done → uv-workflow → materials → lookdev
 Hair / cloth → hair-groom / cloth-sim
@@ -113,6 +114,33 @@ Ready to ship → asset-optimization → lod-pipeline → collision-proxy
   → unity-export | unreal-export | godot-export | export-pipeline
 ```
 
+## Subtype Coverage Map
+
+Your long genre lists are covered as **skills + reference subtypes** (not 200 tiny skills):
+
+| Your list area | Skill | Subtypes live in |
+|----------------|-------|------------------|
+| Action / Fighting / Hack‑n‑Slash | `genre-action-combat` | skill + refs |
+| FPS / TPS / BR / Extraction | `genre-shooter` | refs |
+| RPG / JRPG / CRPG / ARPG / MMO | `genre-rpg` | refs |
+| Survival / Survival Horror gameplay | `genre-survival` | refs |
+| Stealth / Puzzle / Platformer | `genre-stealth`, `genre-puzzle-platformer` | refs |
+| Metroidvania / Roguelike / Roguelite | `genre-metroidvania-roguelike` | refs |
+| Soulslike | `genre-soulslike` | refs |
+| Strategy / RTS / TBS / TD / MOBA / Sims | `genre-strategy-sim` | refs |
+| Racing / Sports | `genre-racing-sports` | refs |
+| VN / Walking Sim / Interactive Movie | `genre-narrative-vn` | refs |
+| Card / Party / Idle / Rhythm / Edu | `genre-card-party-idle` | refs |
+| Open World / Sandbox | `genre-open-world-sandbox` | refs |
+| Cyberpunk…Clockpunk / Space | `sci-fi-punk-worlds` | refs |
+| Medieval…Urban Fantasy | `fantasy-worlds` | refs |
+| Western…Military eras | `historical-worlds` | refs |
+| Post‑apoc / Zombie / Dystopia | `apocalypse-worlds` | refs |
+| Biomes | `biome-worlds` | refs |
+| Horror subtypes + indie refs | horror packs + `indie-horror-aesthetics` | refs |
+| Character races/roles | `character-archetypes` | refs |
+| PS1–PS5 / CRT / VHS | `visual-console-eras` | refs |
+
 ## Workflow Combinations
 
 ### Hero Hard Surface Prop
@@ -121,10 +149,10 @@ blender-director → hard-surface → uv-workflow → materials → lookdev
 → asset-optimization → export-pipeline
 ```
 
-### Everyday Hero Prop
+### Cyberpunk Street Prop
 ```
-blender-director → prop-artist → uv-workflow → materials → lookdev
-→ asset-optimization → unity-export|unreal-export
+blender-director → sci-fi-punk-worlds → neon-retrofuturism → prop-artist
+→ materials → lookdev → qa-review
 ```
 
 ### Game Vehicle
@@ -133,40 +161,46 @@ blender-director → vehicle-artist → lod-pipeline → collision-proxy
 → materials → unreal-export|unity-export → qa-review
 ```
 
+### Soulslike Ruins
+```
+blender-director → genre-soulslike → dark-gritty-mood → fantasy-worlds
+→ environment-artist → lighting → set-dressing → qa-review
+```
+
+### Liminal Backrooms
+```
+blender-director → liminal-space-style → environment-artist → lighting
+→ analog-found-footage-horror (optional) → compositing
+```
+
+### JRPG Town
+```
+blender-director → genre-rpg → fantasy-worlds → stylized-style|anime-style
+→ environment-artist → set-dressing → lookdev
+```
+
+### HD-2D Dungeon
+```
+blender-director → hd-2d-style → pixel-art-style → environment-artist
+→ camera-cinematography → lighting → compositing
+```
+
 ### Game Character
 ```
-blender-director → character-artist → sculpting → retopology
-→ hair-groom → cloth-sim → uv-workflow → texture-workflow
-→ rigging → animation → export-pipeline
+blender-director → character-archetypes → character-artist → sculpting → retopology
+→ hair-groom → cloth-sim → uv-workflow → texture-workflow → rigging → animation → export-pipeline
 ```
 
 ### Horror Environment
 ```
-blender-director → horror-style → environment-artist → set-dressing
-→ lighting → lowpoly-style (optional) → asset-optimization → export-pipeline
+blender-director → horror-style → indie-horror-aesthetics (pick lane)
+→ environment-artist → set-dressing → lighting → export-pipeline
 ```
 
-### PSX Horror Room
+### Cozy Farming Sim
 ```
-blender-director → psx-horror-style → environment-artist → prop-artist
-→ lighting → compositing → qa-review
-```
-
-### Modular Environment Kit
-```
-blender-director → environment-artist → geometry-nodes
-→ uv-workflow → texture-workflow → lod-pipeline → asset-optimization → export-pipeline
-```
-
-### Forest / Foliage
-```
-blender-director → vegetation-artist → geometry-nodes → lod-pipeline
-→ materials → asset-optimization → export-pipeline
-```
-
-### Procedural Scatter System
-```
-blender-director → geometry-nodes → procedural-modeling → asset-optimization
+blender-director → genre-strategy-sim → cozy-wholesome-mood → prop-artist
+→ vegetation-artist → isometric-style (optional) → lookdev
 ```
 
 ### Cinematic Render
@@ -175,37 +209,22 @@ blender-director → [modeling skill] → lookdev → camera-cinematography
 → lighting → rendering → compositing → qa-review
 ```
 
-### Archviz Interior
-```
-blender-director → archviz → materials → camera-cinematography
-→ lighting → rendering → compositing
-```
-
-### Anime Character Presentation
-```
-blender-director → anime-style → character-artist → hair-groom
-→ lookdev → camera-cinematography → rendering → compositing
-```
-
-### Reference Image Match (Photo / Concept Art)
+### Reference Image Match
 ```
 blender-director → reference-image-match.md
-  → Reference Analysis (template)
-  → Camera match → Geometry tiers 1→2→3
+  → Reference Analysis → Camera match → Geometry tiers
   → materials → lighting → rendering
-  → visual-match-checklist → qa-review → validation-checklist
+  → visual-match-checklist → qa-review
 ```
-
-**Key rule:** Analyze image first. Match camera before greebles. Screenshot compare after each major pass. Never animate shared hull materials.
 
 ## Shared References
 
 | Reference | Path |
 |-----------|------|
 | Universal Pipeline | `.claude/skills/references/asset-pipeline.md` |
-| **Reference Image Match** | `.claude/skills/references/reference-image-match.md` |
-| **Reference Analysis Template** | `.claude/skills/references/reference-analysis-template.md` |
-| **Visual Match Checklist** | `.claude/skills/references/visual-match-checklist.md` |
+| Reference Image Match | `.claude/skills/references/reference-image-match.md` |
+| Reference Analysis Template | `.claude/skills/references/reference-analysis-template.md` |
+| Visual Match Checklist | `.claude/skills/references/visual-match-checklist.md` |
 | MCP Integration | `.claude/skills/references/mcp-integration.md` |
 | Naming Conventions | `.claude/skills/references/naming-conventions.md` |
 | Validation Checklist | `.claude/skills/references/validation-checklist.md` |
@@ -229,25 +248,19 @@ blender-director → reference-image-match.md
 
 ## Good Prompts
 
-- "Match this reference photo — analyze first, then build in Blender with same lighting and materials"
-- "Upgrade `spacecraft.blend` to match attached image; camera full-ship view; do not rebuild"
-- "Plan and create a game-ready sci-fi crate for Unity, 2k tris, realistic PBR"
-- "Build a horror apartment kitchen — sparse detail, analog props, flickering fluorescent"
-- "Model a game-ready sedan for Unreal with LODs and UCX collision"
-- "Groom short hair cards for this character and atlas them"
-- "Scatter rocks on this cliff using geometry nodes, then bake for export"
-- "Validate and export SM_Weapon_Rifle_A to FBX for Unreal with collision mesh"
-- "Assemble this modular corridor, dress the set, then QA with screenshots"
+- "Build a liminal Backrooms lobby — fluorescent hum, stained carpet, endless doors"
+- "Cyberpunk street vendor stall, neon-retrofuturism, Unreal export with UCX"
+- "Soulslike chapel interior, dark fantasy, fog gate landmark"
+- "HD-2D forest clearing, pixel party characters, theatrical DoF"
+- "JRPG starter town, cozy mood, hand-painted materials"
+- "Analog horror VHS security-cam office, found-footage framing"
+- "Match this reference photo — analyze first, then build in Blender"
 
 ## Anti-Patterns
 
-- ❌ "How do I use Blender?" — Skills assume production context
-- ❌ Attaching reference image without asking agent to analyze and match it
-- ❌ Skipping blender-director on complex multi-step tasks
-- ❌ Adding greebles before silhouette and panel-break depth
-- ❌ Keyframing emission on shared hull materials (causes white blowout)
+- ❌ Skipping blender-director on complex multi-skill tasks
+- ❌ Mixing cyberpunk + steampunk + solarpunk without an intentional mashup brief
+- ❌ Declaring a genre without loading that genre skill’s readability rules
 - ❌ Manual UI steps when Blender MCP is connected
-- ❌ Export without asset-optimization / qa-review validation
-- ❌ Declaring done on reference tasks without screenshot comparison
-- ❌ Using hard-surface sci-fi language for everyday props (use prop-artist)
-- ❌ Shipping to Unreal/Unity without engine-specific export skill when known
+- ❌ Export without asset-optimization / qa-review
+- ❌ Reference tasks without screenshot comparison

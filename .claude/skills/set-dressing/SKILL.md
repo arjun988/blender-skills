@@ -68,3 +68,9 @@ Layout locked → Hero narrative props → Secondary clusters
 - Uniform clutter wallpaper
 - Block doors/windows without story reason
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Story Clusters | `references/story-clusters.md` | When needed |
+| Density Map | `references/density-map.md` | When needed |

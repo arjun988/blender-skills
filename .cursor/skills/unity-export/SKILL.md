@@ -84,3 +84,9 @@ Scale Factor: 1.0 (fix if model tiny/huge)
 - Assume FBX settings without project convention
 - Leave unused high-poly LODs in prefab
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Unity Checklist | `references/unity-checklist.md` | When needed |
+| Unity Materials | `references/unity-materials.md` | When needed |

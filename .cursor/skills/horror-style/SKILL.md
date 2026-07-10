@@ -137,3 +137,9 @@ Horror benefits from lowpoly-style efficiency:
 |-------|-----------|-----------|
 | Environment layouts | `references/horror-layouts.md` | Level blockout |
 | Analog props | `references/analog-props.md` | Prop list |
+
+## Related Horror Packs
+- `psx-horror-style`, `cosmic-eldritch-horror`, `body-horror-style`, `analog-found-footage-horror`
+- `liminal-space-style`, `folk-horror-style`, `mascot-puppet-horror`, `dream-weirdcore-style`
+- `indie-horror-aesthetics`
+

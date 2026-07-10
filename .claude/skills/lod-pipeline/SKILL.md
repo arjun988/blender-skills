@@ -85,3 +85,9 @@ Collection: `COL_LODs_[Asset]`
 - Blind decimate until unrecognizable
 - Different material slot counts across LODs without reason
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Lod Budgets | `references/lod-budgets.md` | When needed |
+| Lod Validation | `references/lod-validation.md` | When needed |

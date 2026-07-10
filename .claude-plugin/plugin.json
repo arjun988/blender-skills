@@ -1,7 +1,7 @@
 {
   "name": "blender-skills",
-  "version": "1.2.0",
-  "description": "Blender Skills pack with 46 specialized skills for technical art, modeling, materials, VFX, rigging, engine export pipelines, and style direction. Orchestrated by blender-director with Blender MCP integration for production-ready game assets.",
+  "version": "1.3.0",
+  "description": "Blender Skills pack with 94 specialized skills for technical art, genre/style direction, modeling, VFX, engine export, and Blender MCP production workflows.",
   "author": {
     "name": "arjun988",
     "url": "https://github.com/arjun988"

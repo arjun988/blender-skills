@@ -74,3 +74,9 @@ Crunchy low-poly horror. Affine textures. Fog. Limited palette. Tension over fid
 - Modern PBR microdetail as primary look
 - Bright clean global illumination
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Psx Horror Budgets | `references/psx-horror-budgets.md` | When needed |
+| Psx Horror Palette | `references/psx-horror-palette.md` | When needed |

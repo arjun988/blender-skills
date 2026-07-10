@@ -63,3 +63,9 @@ Match project’s exact iso angles — do not invent per asset.
 - Detail undersides invisible in iso
 - Mix perspective cameras into iso kits without reason
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Iso Camera | `references/iso-camera.md` | When needed |
+| Tile Footprints | `references/tile-footprints.md` | When needed |

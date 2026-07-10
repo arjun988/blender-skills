@@ -85,3 +85,10 @@ Use `lod-pipeline` for generation and validation.
 - Boolean chaos without cutter collection
 - Single merged mesh for all systems on game vehicles
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Proportion Blockout | `references/proportion-blockout.md` | When needed |
+| Vehicle Object Split | `references/vehicle-object-split.md` | When needed |
+| Vehicle Lod Targets | `references/vehicle-lod-targets.md` | When needed |

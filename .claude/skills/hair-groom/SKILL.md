@@ -82,3 +82,10 @@ Scalp → Particle/curve groom → Clump/frizz/noise
 - Skip root density near scalp
 - Over-detail flyaways before primary masses
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Hair Card Atlas | `references/hair-card-atlas.md` | When needed |
+| Groom Flow Regions | `references/groom-flow-regions.md` | When needed |
+| Cinematic Vs Game | `references/cinematic-vs-game.md` | When needed |

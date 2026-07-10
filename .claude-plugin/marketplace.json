@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Blender Skills production skills for Cursor and Claude Code with Blender MCP integration",
-    "version": "1.2.0"
+    "version": "1.3.0"
   },
   "plugins": [
     {
       "name": "blender-skills",
       "source": "./",
-      "description": "46 specialized Blender skills: blender-director orchestrator, modeling (hard-surface, prop, vehicle, environment, vegetation, character, creature), production (sculpt, retopo, UV, materials, textures, hair, cloth, lookdev), technical (GN, lighting, camera, rendering, compositing, animation, rigging, VFX, physics), pipeline (scene assembly, set dressing, LOD, collision, Unity/Unreal/Godot export, QA, archviz), and styles (horror, PSX horror, lowpoly, anime, voxel, isometric, stylized, realistic). Includes reference-image-match workflow. Built for Blender MCP execution.",
-      "version": "1.2.0",
+      "description": "94 specialized Blender skills: director orchestration, modeling/production/pipeline, extended art styles, horror packs, world/mood packs, gameplay genre direction, character archetypes, and visual eras. Subtype details in skill references. Built for Blender MCP.",
+      "version": "1.3.0",
       "author": {
         "name": "blender-skills"
       },

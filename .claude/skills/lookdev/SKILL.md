@@ -64,3 +64,9 @@ Each pass: change one major variable (material OR light OR camera), then screens
 - Fix modeling problems only with roughness maps
 - Infinite tweak loops without gap list
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Lookdev Rig | `references/lookdev-rig.md` | When needed |
+| Lookdev Checklist | `references/lookdev-checklist.md` | When needed |

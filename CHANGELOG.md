@@ -6,6 +6,24 @@ Format: [Semantic Versioning](https://semver.org/) — `Major.Minor.Patch`
 
 ---
 
+## [1.3.0] — 2026-07-10
+
+### Added
+- Deep `references/` docs for production skills (prop, vehicle, hair, cloth, VFX, camera, compositing, physics, engine exports, LOD, collision, scene, QA, styles, vegetation, set-dressing, archviz, lookdev)
+- **Extended art styles:** cartoon, comic-book, manga, pixel-art, hand-painted, painterly, stop-motion-craft, chibi, noir, minimalist, vector, retro-8bit, retro-16bit, hd-2d, frutiger-aero
+- **Horror packs:** cosmic-eldritch, body-horror, analog-found-footage, liminal-space, folk-horror, mascot-puppet, dream-weirdcore, indie-horror-aesthetics
+- **Worlds:** fantasy-worlds, sci-fi-punk-worlds, historical-worlds, apocalypse-worlds, biome-worlds
+- **Moods:** cozy-wholesome, dark-gritty, dream-surreal, neon-retrofuturism, brutalist
+- **Gameplay genre direction:** action-combat, shooter, rpg, survival, stealth, puzzle-platformer, metroidvania-roguelike, soulslike, strategy-sim, racing-sports, narrative-vn, card-party-idle, open-world-sandbox
+- **character-archetypes**, **visual-console-eras**
+- Subtype coverage map in `SKILLS_GUIDE.md` (genres/styles map into pack skills + refs)
+
+### Changed
+- Skill count **46 → 94**; references **~40 → 175**
+- `blender-director` routing expanded for genre/style/world/mood packs
+
+---
+
 ## [1.2.0] — 2026-07-10
 
 ### Added

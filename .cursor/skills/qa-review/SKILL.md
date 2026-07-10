@@ -80,3 +80,9 @@ Use `get_viewport_screenshot` via MCP when connected.
 - Rubber-stamp without screenshots on visual tasks
 - Ignore budget overruns without approval
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Qa Verdict Template | `references/qa-verdict-template.md` | When needed |
+| Screenshot Angles | `references/screenshot-angles.md` | When needed |

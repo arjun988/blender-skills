@@ -77,3 +77,10 @@ Reference → Scale blockout → Primary volumes → Secondary forms
 - Use sci-fi panel language on mundane props
 - Skip collision planning for interactables
 
+## Reference Guide
+
+| Topic | Reference | Load When |
+|-------|-----------|----------|
+| Prop Tiers | `references/prop-tiers.md` | When needed |
+| Kitbash Library | `references/kitbash-library.md` | When needed |
+| Everyday Prop Checklist | `references/everyday-prop-checklist.md` | When needed |
