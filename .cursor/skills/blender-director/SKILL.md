@@ -9,7 +9,7 @@ metadata:
   role: specialist
   role: orchestrator
   triggers: Blender, 3D asset, game-ready, pipeline, workflow, plan, coordinate, technical artist
-  related-skills: blender-modeler, hard-surface, environment-artist, character-artist, asset-optimization, export-pipeline
+  related-skills: blender-modeler, hard-surface, prop-artist, vehicle-artist, environment-artist, character-artist, asset-optimization, export-pipeline, qa-review
 ---
 
 # Blender Director
@@ -64,27 +64,50 @@ Before any work, determine:
 
 | Request Signal | Primary Skill | Supporting Skills |
 |----------------|---------------|-------------------|
-| Sci-fi, weapons, vehicles, machinery | hard-surface | blender-modeler, materials, asset-optimization |
-| Buildings, terrain, modular kits | environment-artist | geometry-nodes, procedural-modeling, uv-workflow |
-| Human characters, clothing, hair | character-artist | retopology, rigging, uv-workflow |
+| Sci-fi, weapons, machinery, industrial HS | hard-surface | blender-modeler, materials, asset-optimization |
+| Everyday / hero props, kitbash, furniture | prop-artist | materials, uv-workflow, set-dressing, asset-optimization |
+| Cars, ships, aircraft, mechs, transit | vehicle-artist | hard-surface, lod-pipeline, collision-proxy, materials |
+| Buildings, terrain, modular kits | environment-artist | geometry-nodes, procedural-modeling, uv-workflow, scene-assembly |
+| Trees, plants, grass, foliage | vegetation-artist | geometry-nodes, environment-artist, lod-pipeline |
+| Human characters, clothing base mesh | character-artist | retopology, rigging, uv-workflow, hair-groom, cloth-sim |
+| Hair, fur, hair cards, groom | hair-groom | character-artist, materials, texture-workflow |
+| Cloth sim, garments, capes, bake | cloth-sim | character-artist, physics-sim, animation |
 | Monsters, aliens, fantasy creatures | creature-artist | sculpting, retopology, rigging |
 | Organic detail, wrinkles, damage | sculpting | retopology, texture-workflow |
 | Clean animation mesh | retopology | character-artist, creature-artist |
 | UV seams, texel density, UDIM | uv-workflow | texture-workflow, materials |
-| PBR, procedural shaders | materials | texture-workflow |
+| PBR, procedural shaders | materials | texture-workflow, lookdev |
 | Baking, normal maps, atlases | texture-workflow | uv-workflow, materials |
+| Lookdev / shading review loop | lookdev | materials, lighting, camera-cinematography, qa-review |
 | Scatter, procedural systems | geometry-nodes | procedural-modeling, environment-artist |
-| Mood, cinematic lighting | lighting | rendering, horror-style |
-| Final renders, passes | rendering | lighting, materials |
+| Mood, cinematic lighting | lighting | rendering, lookdev, horror-style |
+| Camera, lenses, framing, camera moves | camera-cinematography | rendering, lighting, animation, compositing |
+| Final renders, passes | rendering | lighting, materials, compositing |
+| Compositor, grade, beauty stack | compositing | rendering, lookdev, vfx-fx |
+| Smoke, fire, particles, cinematic FX | vfx-fx | geometry-nodes, physics-sim, materials, compositing |
+| Rigid/soft body, destruction | physics-sim | vfx-fx, collision-proxy, animation |
 | Walk cycles, mechanical motion | animation | rigging |
 | Bones, IK, weight paint | rigging | animation, character-artist |
 | Rocks, roads, cables, buildings (procedural) | procedural-modeling | geometry-nodes |
-| Polycount, cleanup, LODs | asset-optimization | export-pipeline |
-| FBX/GLTF export, engine import | export-pipeline | asset-optimization |
-| Psychological horror aesthetic | horror-style | lighting, environment-artist |
+| Large scene layout, linking, overrides | scene-assembly | environment-artist, set-dressing, lighting |
+| Prop placement, narrative clutter | set-dressing | prop-artist, scene-assembly, environment-artist |
+| Archviz interiors/exteriors | archviz | materials, lighting, camera-cinematography, rendering |
+| Polycount, cleanup | asset-optimization | lod-pipeline, export-pipeline, qa-review |
+| LOD generation / validation | lod-pipeline | asset-optimization, unity-export, unreal-export |
+| UCX / convex / collider proxies | collision-proxy | lod-pipeline, unreal-export, unity-export, physics-sim |
+| Generic FBX/GLTF/USD export | export-pipeline | asset-optimization, qa-review |
+| Unity-specific export | unity-export | export-pipeline, lod-pipeline, collision-proxy |
+| Unreal-specific export | unreal-export | export-pipeline, lod-pipeline, collision-proxy |
+| Godot-specific export | godot-export | export-pipeline, lod-pipeline, collision-proxy |
+| QA gate, screenshot review, ship check | qa-review | asset-optimization, lookdev, blender-director |
+| Psychological horror aesthetic | horror-style | lighting, environment-artist, set-dressing |
+| PSX/PS1 horror crunch | psx-horror-style | horror-style, lowpoly-style, lighting, compositing |
 | PS1/PS2, Lethal Company style | lowpoly-style | environment-artist, materials |
-| Exaggerated, NPR, hand-painted | stylized-style | materials, rendering |
-| Photoreal, scan cleanup, AAA PBR | realistic-style | texture-workflow, rendering |
+| Anime / cel / hard color breaks | anime-style | stylized-style, materials, rendering, character-artist |
+| Voxel / Minecraft-adjacent | voxel-style | lowpoly-style, environment-artist, geometry-nodes |
+| Isometric / strategy / diorama | isometric-style | camera-cinematography, environment-artist, scene-assembly |
+| Exaggerated, NPR, hand-painted | stylized-style | materials, rendering, anime-style |
+| Photoreal, scan cleanup, AAA PBR | realistic-style | texture-workflow, rendering, lookdev |
 | **Reference photo / concept art attached** | **reference-image-match** | blender-director → discipline skill → style → materials → lighting → rendering |
 
 ## Reference Image Workflow (Mandatory)
@@ -147,6 +170,16 @@ Output this before executing:
 blender-director → hard-surface → materials → uv-workflow → asset-optimization → export-pipeline
 ```
 
+### Everyday / Hero Prop
+```
+blender-director → prop-artist → uv-workflow → materials → lookdev → asset-optimization → export-pipeline
+```
+
+### Vehicle (Game)
+```
+blender-director → vehicle-artist → lod-pipeline → collision-proxy → materials → unreal-export|unity-export
+```
+
 ### Environment Modular Kit
 ```
 blender-director → environment-artist → geometry-nodes → uv-workflow → asset-optimization → export-pipeline
@@ -154,17 +187,33 @@ blender-director → environment-artist → geometry-nodes → uv-workflow → a
 
 ### Game Character
 ```
-blender-director → character-artist → sculpting → retopology → uv-workflow → materials → rigging → animation → export-pipeline
+blender-director → character-artist → sculpting → retopology → hair-groom → cloth-sim
+  → uv-workflow → materials → rigging → animation → export-pipeline
 ```
 
 ### Horror Scene
 ```
-blender-director → horror-style → environment-artist → lighting → asset-optimization → export-pipeline
+blender-director → horror-style → environment-artist → set-dressing → lighting → asset-optimization → export-pipeline
+```
+
+### PSX Horror Scene
+```
+blender-director → psx-horror-style → environment-artist → lowpoly-style → lighting → compositing
 ```
 
 ### Procedural Scatter System
 ```
 blender-director → geometry-nodes → procedural-modeling → asset-optimization
+```
+
+### Cinematic Shot
+```
+blender-director → [discipline] → lookdev → camera-cinematography → lighting → rendering → compositing → qa-review
+```
+
+### Engine Delivery
+```
+blender-director → asset-optimization → lod-pipeline → collision-proxy → unity-export|unreal-export|godot-export → qa-review
 ```
 
 ## MCP Integration
@@ -227,17 +276,31 @@ User attached photo / concept / "match this"?
 ### New Asset Request
 ```
 Is style specified?
-├── Horror → horror-style + environment-artist or hard-surface
+├── Horror → horror-style (+ psx-horror-style if PS1 crunch)
 ├── Lowpoly → lowpoly-style + relevant modeling skill
+├── Anime/cel → anime-style + relevant modeling skill
+├── Voxel → voxel-style + relevant modeling skill
+├── Isometric → isometric-style + camera-cinematography
 ├── Stylized → stylized-style + relevant modeling skill
 ├── Realistic → realistic-style + relevant modeling skill
+├── Archviz → archviz + lookdev
 └── Unspecified → Ask or infer from context
 
-Is it organic or hard surface?
-├── Hard surface → hard-surface
-├── Human → character-artist
+What is the asset?
+├── Vehicle / mech → vehicle-artist
+├── Everyday / hero prop → prop-artist
+├── Sci-fi / weapon / industrial HS → hard-surface
+├── Human → character-artist (+ hair-groom / cloth-sim as needed)
 ├── Creature → creature-artist
-└── Environment → environment-artist
+├── Vegetation → vegetation-artist
+├── Environment / level → environment-artist + scene-assembly
+└── FX / sim → vfx-fx / physics-sim / cloth-sim
+
+Engine delivery?
+├── Unity → unity-export
+├── Unreal → unreal-export
+├── Godot → godot-export
+└── Generic → export-pipeline
 
 Does it need animation?
 ├── Yes → Add retopology, rigging, animation
@@ -246,4 +309,4 @@ Does it need animation?
 
 ## Knowledge Reference
 
-AAA, Blender, MCP, game-ready, technical art, pipeline, production brief, hard surface, environment art, character art, creature art, sculpting, retopology, UV unwrapping, PBR materials, texture baking, geometry nodes, procedural modeling, lighting, Cycles, Eevee, AgX, animation, rigging, LOD, export, FBX, GLTF, USD, Unity, Unreal, Godot, horror, lowpoly, stylized, realistic, reference image match, photo match, silhouette, panel breaks, greebles, blender-mcp, COL_, SM_, MAT_, LGT_, CAM_, ARM_, AN_
+AAA, Blender, MCP, game-ready, technical art, pipeline, production brief, hard surface, prop artist, vehicle artist, environment art, character art, creature art, vegetation, set dressing, hair groom, cloth sim, VFX, physics, camera cinematography, compositing, lookdev, archviz, sculpting, retopology, UV unwrapping, PBR materials, texture baking, geometry nodes, procedural modeling, lighting, Cycles, Eevee, AgX, animation, rigging, LOD, collision proxy, scene assembly, QA review, export, FBX, GLTF, USD, Unity, Unreal, Godot, horror, PSX horror, lowpoly, anime, voxel, isometric, stylized, realistic, reference image match, photo match, silhouette, panel breaks, greebles, blender-mcp, COL_, SM_, MAT_, LGT_, CAM_, ARM_, AN_, UCX_

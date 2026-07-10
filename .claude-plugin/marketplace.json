@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Blender Skills production skills for Cursor and Claude Code with Blender MCP integration",
-    "version": "1.0.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "blender-skills",
       "source": "./",
-      "description": "23 specialized Blender skills: blender-director orchestrator, modeling disciplines (hard-surface, environment, character, creature), production workflow (sculpt, retopo, UV, materials, textures), technical skills (geometry nodes, lighting, rendering, animation, rigging), pipeline (optimization, export), and style specialists (horror, lowpoly, stylized, realistic). Includes reference-image-match workflow. Built for Blender MCP execution.",
-      "version": "1.0.0",
+      "description": "46 specialized Blender skills: blender-director orchestrator, modeling (hard-surface, prop, vehicle, environment, vegetation, character, creature), production (sculpt, retopo, UV, materials, textures, hair, cloth, lookdev), technical (GN, lighting, camera, rendering, compositing, animation, rigging, VFX, physics), pipeline (scene assembly, set dressing, LOD, collision, Unity/Unreal/Godot export, QA, archviz), and styles (horror, PSX horror, lowpoly, anime, voxel, isometric, stylized, realistic). Includes reference-image-match workflow. Built for Blender MCP execution.",
+      "version": "1.2.0",
       "author": {
         "name": "blender-skills"
       },
@@ -27,12 +27,16 @@
         "technical-artist",
         "blender-mcp",
         "hard-surface",
+        "prop-artist",
+        "vehicle-artist",
         "environment-art",
         "character-art",
         "rigging",
         "pbr",
         "geometry-nodes",
-        "export-pipeline"
+        "export-pipeline",
+        "unity-export",
+        "unreal-export"
       ],
       "category": "creative",
       "tags": [

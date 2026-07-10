@@ -8,7 +8,7 @@ metadata:
   domain: blender
   role: specialist
   triggers: hard surface, sci-fi, industrial, military, vehicle, spaceship, weapon, robot, machinery, boolean, bevel, panel line, greeble, mechanical
-  related-skills: blender-modeler, materials, uv-workflow, asset-optimization
+  related-skills: blender-modeler, materials, uv-workflow, asset-optimization, vehicle-artist, prop-artist
 ---
 
 # Hard Surface Artist
@@ -111,6 +111,8 @@ Weighted Normal modifier: Keep Sharp enabled
 | Rubber gasket | Separate mesh, slight inset channel |
 
 ## Vehicle / Spaceship Specifics
+
+> Prefer **vehicle-artist** for cars, ships, aircraft, and mechs. Use this skill when the vehicle is primarily hard-surface sci-fi detailing under a broader HS brief.
 
 - Establish centerline symmetry early (Mirror modifier)
 - Flow lines follow aerodynamic/structural logic

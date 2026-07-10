@@ -6,6 +6,24 @@ Format: [Semantic Versioning](https://semver.org/) — `Major.Minor.Patch`
 
 ---
 
+## [1.2.0] — 2026-07-10
+
+### Added
+- **Modeling:** `prop-artist`, `vehicle-artist`, `vegetation-artist`
+- **Character / sim:** `hair-groom`, `cloth-sim`
+- **Technical:** `vfx-fx`, `camera-cinematography`, `compositing`, `physics-sim`, `lookdev`
+- **Pipeline:** `unity-export`, `unreal-export`, `godot-export`, `lod-pipeline`, `collision-proxy`, `scene-assembly`, `set-dressing`, `qa-review`, `archviz`
+- **Styles:** `anime-style`, `voxel-style`, `isometric-style`, `psx-horror-style`
+- Expanded `blender-director` routing tables and multi-skill workflows
+- Updated `SKILLS_GUIDE.md` decision trees for new disciplines and engines
+
+### Changed
+- Skill count **23 → 46** (`version.json`, README, plugin metadata)
+- `hard-surface` now defers dedicated vehicles to `vehicle-artist`
+- `skill-routing.md` engine targets point at Unity/Unreal/Godot export skills
+
+---
+
 ## [1.1.0] — 2026-07-05
 
 ### Added

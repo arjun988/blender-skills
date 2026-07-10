@@ -4,12 +4,12 @@
 
 # Blender Skills
 
-**23 Specialized Skills for Blender Artists.**
+**46 Specialized Skills for Blender Artists.**
 **Transform Claude Code and Cursor into your Senior Technical Art team — not a tutorial bot.**
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](version.json)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](version.json)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-23-orange.svg)](.claude/skills/)
+[![Skills](https://img.shields.io/badge/skills-46-orange.svg)](.claude/skills/)
 [![Blender MCP](https://img.shields.io/badge/Blender_MCP-integrated-blueviolet.svg)](docs/BLENDER_MCP_SETUP.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-black.svg)](https://docs.anthropic.com/en/docs/claude-code)
 [![Website](https://img.shields.io/badge/website-blender--skills.vercel.app-orange.svg)](https://blender-skills.vercel.app/)
@@ -41,9 +41,9 @@ For all installation methods and first steps, see the **[Quick Start Guide](http
 
 ---
 
-## Skills (23)
+## Skills (46)
 
-23 specialized skills across 5 categories covering every stage of a production Blender pipeline.
+46 specialized skills across modeling, production, technical, pipeline, and style categories covering a full production Blender pipeline.
 
 See **[Skills Guide](SKILLS_GUIDE.md)** for the full list, decision trees, and workflow combinations.
 
@@ -82,11 +82,11 @@ Attach a photo or concept art and the agent matches it:
 | Category | Skills |
 |----------|--------|
 | **Orchestration** | [blender-director](.claude/skills/blender-director/) |
-| **Modeling** | [blender-modeler](.claude/skills/blender-modeler/), [hard-surface](.claude/skills/hard-surface/), [environment-artist](.claude/skills/environment-artist/), [character-artist](.claude/skills/character-artist/), [creature-artist](.claude/skills/creature-artist/) |
-| **Production Workflow** | [sculpting](.claude/skills/sculpting/), [retopology](.claude/skills/retopology/), [uv-workflow](.claude/skills/uv-workflow/), [materials](.claude/skills/materials/), [texture-workflow](.claude/skills/texture-workflow/) |
-| **Technical** | [geometry-nodes](.claude/skills/geometry-nodes/), [lighting](.claude/skills/lighting/), [rendering](.claude/skills/rendering/), [animation](.claude/skills/animation/), [rigging](.claude/skills/rigging/) |
-| **Pipeline** | [procedural-modeling](.claude/skills/procedural-modeling/), [asset-optimization](.claude/skills/asset-optimization/), [export-pipeline](.claude/skills/export-pipeline/) |
-| **Style** | [horror-style](.claude/skills/horror-style/), [lowpoly-style](.claude/skills/lowpoly-style/), [stylized-style](.claude/skills/stylized-style/), [realistic-style](.claude/skills/realistic-style/) |
+| **Modeling** | [blender-modeler](.claude/skills/blender-modeler/), [hard-surface](.claude/skills/hard-surface/), [prop-artist](.claude/skills/prop-artist/), [vehicle-artist](.claude/skills/vehicle-artist/), [environment-artist](.claude/skills/environment-artist/), [vegetation-artist](.claude/skills/vegetation-artist/), [character-artist](.claude/skills/character-artist/), [creature-artist](.claude/skills/creature-artist/) |
+| **Production Workflow** | [sculpting](.claude/skills/sculpting/), [retopology](.claude/skills/retopology/), [uv-workflow](.claude/skills/uv-workflow/), [materials](.claude/skills/materials/), [texture-workflow](.claude/skills/texture-workflow/), [hair-groom](.claude/skills/hair-groom/), [cloth-sim](.claude/skills/cloth-sim/), [lookdev](.claude/skills/lookdev/) |
+| **Technical** | [geometry-nodes](.claude/skills/geometry-nodes/), [lighting](.claude/skills/lighting/), [camera-cinematography](.claude/skills/camera-cinematography/), [rendering](.claude/skills/rendering/), [compositing](.claude/skills/compositing/), [animation](.claude/skills/animation/), [rigging](.claude/skills/rigging/), [vfx-fx](.claude/skills/vfx-fx/), [physics-sim](.claude/skills/physics-sim/) |
+| **Pipeline** | [procedural-modeling](.claude/skills/procedural-modeling/), [scene-assembly](.claude/skills/scene-assembly/), [set-dressing](.claude/skills/set-dressing/), [asset-optimization](.claude/skills/asset-optimization/), [lod-pipeline](.claude/skills/lod-pipeline/), [collision-proxy](.claude/skills/collision-proxy/), [export-pipeline](.claude/skills/export-pipeline/), [unity-export](.claude/skills/unity-export/), [unreal-export](.claude/skills/unreal-export/), [godot-export](.claude/skills/godot-export/), [qa-review](.claude/skills/qa-review/), [archviz](.claude/skills/archviz/) |
+| **Style** | [horror-style](.claude/skills/horror-style/), [psx-horror-style](.claude/skills/psx-horror-style/), [lowpoly-style](.claude/skills/lowpoly-style/), [anime-style](.claude/skills/anime-style/), [voxel-style](.claude/skills/voxel-style/), [isometric-style](.claude/skills/isometric-style/), [stylized-style](.claude/skills/stylized-style/), [realistic-style](.claude/skills/realistic-style/) |
 
 ---
 
