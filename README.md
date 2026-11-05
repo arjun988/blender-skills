@@ -5,7 +5,7 @@
 # Blender Skills
 
 **94 Specialized Skills for Blender Artists.**
-**Transform Cursor, Claude Code, Kiro, and Codex into your Senior Technical Art team — not a tutorial bot.**
+**Transform Cursor, Claude Code, Antigravity, Kiro, and Codex into your Senior Technical Art team — not a tutorial bot.**
 
 [![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)](version.json)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -13,6 +13,7 @@
 [![Blender MCP](https://img.shields.io/badge/Blender_MCP-integrated-blueviolet.svg)](docs/BLENDER_MCP_SETUP.md)
 [![Cursor](https://img.shields.io/badge/Cursor-skills-blue.svg)](https://cursor.com)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-black.svg)](https://docs.anthropic.com/en/docs/claude-code)
+[![Antigravity](https://img.shields.io/badge/Antigravity-compatible-4285F4.svg)](https://antigravity.google)
 [![Kiro](https://img.shields.io/badge/Kiro-compatible-purple.svg)](https://kiro.dev)
 [![Codex](https://img.shields.io/badge/Codex-compatible-green.svg)](https://openai.com/codex)
 [![Website](https://img.shields.io/badge/website-blender--skills.vercel.app-orange.svg)](https://blender-skills.vercel.app/)
@@ -26,7 +27,7 @@
 > **Marketplace listing is currently under review by Anthropic.**
 > Install directly from GitHub in the meantime.
 
-Works with **Cursor**, **Claude Code**, **Kiro**, and **Codex** — same skill pack, Blender MCP execution.
+Works with **Cursor**, **Claude Code**, **Antigravity**, **Kiro**, and **Codex** — same skill pack, Blender MCP execution.
 
 **Claude Code**
 ```bash
@@ -38,6 +39,15 @@ cp -r blender-skills/.claude/skills /path/to/your/project/.claude/skills/
 ```powershell
 git clone https://github.com/arjun988/blender-skills.git
 Copy-Item -Recurse -Force "blender-skills\.claude\skills\*" ".cursor\skills\"
+```
+
+**Google Antigravity**
+```powershell
+# Project workspace install (Windows PowerShell)
+git clone https://github.com/arjun988/blender-skills.git
+Copy-Item -Recurse -Force "blender-skills\.agents\skills\*" ".agents\skills\"
+# Or global install across all workspaces:
+Copy-Item -Recurse -Force "blender-skills\.agents\skills\*" "$HOME\.gemini\config\skills\"
 ```
 
 **Kiro**
@@ -120,7 +130,7 @@ Full paths and workflows: **[SKILLS_GUIDE.md](SKILLS_GUIDE.md)**.
 Every skill executes **directly in Blender** via MCP — no UI walkthroughs, no manual steps.
 
 ```
-Blender (running) ← BlenderMCP addon ← Cursor / Claude Code / Kiro / Codex
+Blender (running) ← BlenderMCP addon ← Cursor / Claude Code / Antigravity / Kiro / Codex
 ```
 
 **Setup in 4 steps:**
@@ -128,7 +138,7 @@ Blender (running) ← BlenderMCP addon ← Cursor / Claude Code / Kiro / Codex
 1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/)
 2. Install the [BlenderMCP addon](https://github.com/ahujasid/blender-mcp) in Blender
 3. Blender sidebar `N` → **BlenderMCP** → **Connect to Claude**
-4. Restart your agent — Cursor ships `.cursor/mcp.json`; Claude Code uses `.mcp.json`
+4. Restart your agent — Cursor ships `.cursor/mcp.json`; Claude Code uses `.mcp.json`; Antigravity uses `.agents/mcp_config.json` (or `~/.gemini/config/mcp_config.json`)
 
 Full guide: **[docs/BLENDER_MCP_SETUP.md](docs/BLENDER_MCP_SETUP.md)**
 
@@ -136,6 +146,7 @@ Full guide: **[docs/BLENDER_MCP_SETUP.md](docs/BLENDER_MCP_SETUP.md)**
 |---------------|--------|
 | `.cursor/mcp.json` + `.cursor/skills/` | Cursor |
 | `.mcp.json` + `.claude/skills/` | Claude Code |
+| `.agents/mcp_config.json` + `.agents/skills/` | Google Antigravity |
 | Kiro skills dir + Blender MCP | Kiro |
 | Codex skills path + Blender MCP | Codex |
 
@@ -191,6 +202,8 @@ Every skill in this pack:
 ## Project Structure
 
 ```
+.agents/skills/           # Synced mirror for Google Antigravity
+.agents/mcp_config.json   # Blender MCP config (Google Antigravity)
 .claude-plugin/           # Claude Code plugin manifest
 .claude/skills/           # 94 skills + 175+ reference files
   ├── blender-director/
@@ -203,6 +216,7 @@ Every skill in this pack:
 .cursor/skills/           # Synced mirror for Cursor
 .cursor/mcp.json          # Blender MCP config (Cursor)
 .mcp.json                 # Blender MCP config (Claude Code)
+AGENTS.md                 # Project rules for Antigravity & Codex
 site/                     # Website (blender-skills.vercel.app)
 docs/
   └── BLENDER_MCP_SETUP.md
@@ -252,7 +266,7 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Built for Cursor, Claude Code, Kiro & Codex** | **Blender MCP** | **94 Skills** | **175+ Reference Files**
+**Built for Cursor, Claude Code, Antigravity, Kiro & Codex** | **Blender MCP** | **94 Skills** | **175+ Reference Files**
 
 Inspired by [jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
 

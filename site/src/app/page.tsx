@@ -115,6 +115,7 @@ export default function HomePage() {
             {SKILL_COUNT} specialist skills for{' '}
             <span className="text-white font-medium">Cursor</span>,{' '}
             <span className="text-white font-medium">Claude Code</span>,{' '}
+            <span className="text-white font-medium">Antigravity</span>,{' '}
             <span className="text-white font-medium">Kiro</span>, and{' '}
             <span className="text-white font-medium">Codex</span>.
             Every skill executes directly inside Blender via MCP — production pipelines, not tutorials.
@@ -153,13 +154,13 @@ export default function HomePage() {
               <Sparkles className="h-3.5 w-3.5" /> Works with your agent
             </p>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-              Built for Cursor, Claude Code, Kiro &amp; Codex
+              Built for Cursor, Claude Code, Antigravity, Kiro &amp; Codex
             </h2>
             <p className="text-muted-foreground text-sm md:text-base">
               Same skill pack, same Blender MCP execution model — drop skills into the agent you already use.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {platforms.map((p) => (
               <div key={p.name} className="rounded-xl border bg-card p-5 space-y-2 hover:shadow-md transition-shadow">
                 <p className="font-semibold text-lg">{p.name}</p>

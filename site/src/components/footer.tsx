@@ -12,7 +12,7 @@ export function Footer() {
           </div>
           <span>
             <strong className="text-foreground">Blender Skills</strong> — {SKILL_COUNT} skills for
-            Cursor, Claude Code, Kiro &amp; Codex
+            Cursor, Claude Code, Antigravity, Kiro &amp; Codex
           </span>
         </div>
 

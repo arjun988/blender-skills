@@ -1,6 +1,6 @@
 # Blender MCP Setup Guide
 
-Connect [BlenderMCP](https://github.com/ahujasid/blender-mcp) to Cursor or Claude Code so the Blender Skills Pack can execute operations directly in Blender.
+Connect [BlenderMCP](https://github.com/ahujasid/blender-mcp) to Cursor, Claude Code, or Google Antigravity so the Blender Skills Pack can execute operations directly in Blender.
 
 ## Prerequisites
 
@@ -99,6 +99,29 @@ Edit `claude_desktop_config.json`:
   }
 }
 ```
+
+### Google Antigravity
+
+This repo includes `.agents/mcp_config.json`. To configure Blender MCP globally across all Antigravity workspaces, add the server to `~/.gemini/config/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "blender": {
+      "command": "cmd",
+      "args": ["/c", "uvx", "--python", "3.11", "blender-mcp"],
+      "env": {
+        "BLENDER_HOST": "localhost",
+        "BLENDER_PORT": "9876",
+        "UV_PYTHON_PREFERENCE": "only-managed",
+        "DISABLE_TELEMETRY": "true"
+      }
+    }
+  }
+}
+```
+
+Verify active MCP servers in Antigravity via **Additional Options (...) → MCP Servers**.
 
 ## Step 4: Verify Connection
 
