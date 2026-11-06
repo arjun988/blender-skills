@@ -1,0 +1,13 @@
+{
+  "name": "blender-skills",
+  "displayName": "Blender Skills (MCP)",
+  "version": "1.3.0",
+  "description": "Blender MCP server configuration and workspace integration for Google Antigravity.",
+  "author": {
+    "name": "arjun988",
+    "url": "https://github.com/arjun988"
+  },
+  "homepage": "https://blender-skills.vercel.app/",
+  "repository": "https://github.com/arjun988/blender-skills",
+  "license": "MIT"
+}

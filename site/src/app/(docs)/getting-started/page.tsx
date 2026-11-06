@@ -35,7 +35,7 @@ export default function GettingStartedPage() {
         <h1 className="text-4xl font-bold tracking-tight">Getting Started</h1>
         <p className="text-lg text-muted-foreground">
           Install Blender Skills in <strong>Cursor</strong>, <strong>Claude Code</strong>,{' '}
-          <strong>Kiro</strong>, or <strong>Codex</strong>, then connect Blender MCP for live execution.
+          <strong>Antigravity</strong>, <strong>Kiro</strong>, or <strong>Codex</strong>, then connect Blender MCP for live execution.
         </p>
       </div>
 
@@ -90,7 +90,19 @@ export default function GettingStartedPage() {
         </div>
 
         <div>
-          <h3 className="font-semibold mb-1 text-lg">4. Kiro</h3>
+          <h3 className="font-semibold mb-1 text-lg">4. Google Antigravity</h3>
+          <p className="text-muted-foreground text-sm mb-2">
+            Opening this repo directly in Antigravity auto-discovers all skills via <code>.agents/skills.json</code>.
+            To install into another project workspace or globally:
+          </p>
+          <CodeBlock>{`# Project workspace install (Windows PowerShell)
+Copy-Item -Recurse -Force "blender-skills\\.claude\\skills\\*" ".agents\\skills\\"
+# Global install (all Antigravity workspaces)
+Copy-Item -Recurse -Force "blender-skills\\.claude\\skills\\*" "$HOME\\.gemini\\config\\skills\\"`}</CodeBlock>
+        </div>
+
+        <div>
+          <h3 className="font-semibold mb-1 text-lg">5. Kiro</h3>
           <p className="text-muted-foreground text-sm mb-2">
             Kiro uses agent skills folders similarly — copy the skill directories into your Kiro skills path
             (project or user skills, depending on your Kiro setup), then restart Kiro.
@@ -101,7 +113,7 @@ cp -r blender-skills/.claude/skills/* /path/to/kiro/skills/
         </div>
 
         <div>
-          <h3 className="font-semibold mb-1 text-lg">5. Codex</h3>
+          <h3 className="font-semibold mb-1 text-lg">6. Codex</h3>
           <p className="text-muted-foreground text-sm mb-2">
             Mount or copy <code>.claude/skills</code> into your Codex skills / instructions path so the
             agent can discover <code>SKILL.md</code> files. Configure Blender MCP the same way you would
@@ -174,6 +186,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh`}</CodeBlock>
                   <tr className="border-t">
                     <td className="px-4 py-2 font-mono text-xs">.mcp.json + .claude/skills/</td>
                     <td className="px-4 py-2 text-muted-foreground">Claude Code</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="px-4 py-2 font-mono text-xs">.agents/mcp_config.json + .agents/skills/</td>
+                    <td className="px-4 py-2 text-muted-foreground">Google Antigravity</td>
                   </tr>
                   <tr className="border-t">
                     <td className="px-4 py-2 font-mono text-xs">Kiro skills dir + Blender MCP</td>

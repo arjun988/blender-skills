@@ -39,9 +39,10 @@ mkdir -p .claude/skills/my-skill
 # Add references/ subfolder for supporting docs
 ```
 
-**Syncing to Cursor:**
+**Syncing to Cursor and Antigravity:**
 ```powershell
 Copy-Item -Recurse -Force ".claude\skills\*" ".cursor\skills\"
+Copy-Item -Recurse -Force ".claude\skills\*" ".agents\skills\"
 ```
 
 #### 4. Commit
@@ -180,7 +181,7 @@ Before submitting:
 2. **MCP test** — does the Python code run in Blender without error?
 3. **Completeness** — does it cover the main use cases?
 4. **Schema** — does frontmatter match the required format?
-5. **Sync** — run `Copy-Item -Recurse -Force ".claude\skills\*" ".cursor\skills\"` and verify
+5. **Sync** — run `Copy-Item -Recurse -Force ".claude\skills\*" ".cursor\skills\"` and `Copy-Item -Recurse -Force ".claude\skills\*" ".agents\skills\"` and verify
 
 ---
 

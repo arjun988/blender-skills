@@ -1,6 +1,6 @@
 # Quick Start
 
-Get the Blender Skills Pack running in Cursor or Claude Code with Blender MCP.
+Get the Blender Skills Pack running in Cursor, Claude Code, or Google Antigravity with Blender MCP.
 
 ## 1. Install Skills
 
@@ -33,6 +33,27 @@ Copy-Item -Recurse -Force ".claude\skills\*" ".cursor\skills\"
 ```
 
 Or symlink if you prefer a single source of truth.
+
+### Google Antigravity
+
+When opening this repository directly in Antigravity, `.agents/skills.json` automatically registers all 94 skills from `.claude/skills`.
+
+To install into another project workspace or globally:
+
+```powershell
+# Workspace install (Windows PowerShell)
+Copy-Item -Recurse -Force ".claude\skills\*" ".agents\skills\"
+
+# Global install (all Antigravity sessions)
+Copy-Item -Recurse -Force ".claude\skills\*" "$HOME\.gemini\config\skills\"
+```
+
+macOS/Linux:
+```bash
+cp -r .claude/skills/* .agents/skills/
+# or globally:
+cp -r .claude/skills/* ~/.gemini/config/skills/
+```
 
 ## 2. Connect Blender MCP
 
@@ -90,7 +111,7 @@ Full decision trees: [SKILLS_GUIDE.md](SKILLS_GUIDE.md)
 
 ## Troubleshooting
 
-**Skills not activating:** Ensure skills are in `.cursor/skills/` (Cursor) or `.claude/skills/` (Claude Code).
+**Skills not activating:** Ensure skills are in `.cursor/skills/` (Cursor), `.claude/skills/` (Claude Code), or `.agents/skills/` / `~/.gemini/config/skills/` (Google Antigravity).
 
 **MCP not connecting:** See [docs/BLENDER_MCP_SETUP.md](docs/BLENDER_MCP_SETUP.md) — usually uv PATH or Blender addon not started.
 

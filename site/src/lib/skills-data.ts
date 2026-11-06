@@ -14,6 +14,11 @@ export const platforms = [
     install: 'cp -r blender-skills/.claude/skills .claude/skills/',
   },
   {
+    name: 'Antigravity',
+    blurb: 'Project skills in `.agents/skills/` (or `~/.gemini/config/skills/`) with `.agents/mcp_config.json`.',
+    install: 'Copy-Item -Recurse -Force ".agents\\skills\\*" ".agents\\skills\\"',
+  },
+  {
     name: 'Kiro',
     blurb: 'Drop the same skill folders into your Kiro agent skills path and point MCP at Blender.',
     install: 'Copy .claude/skills into your Kiro skills directory',
