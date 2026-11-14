@@ -1,11 +1,11 @@
 {
   "mcpServers": {
     "blender": {
-      "command": "uvx",
+      "command": "/Users/jongarcia/.local/bin/uvx",
       "args": [
         "--python",
         "3.11",
-        "blender-mcp"
+        "mcp-for-blender"
       ],
       "env": {
         "BLENDER_HOST": "localhost",
