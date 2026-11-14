@@ -51,3 +51,9 @@ First blender-skills try against the fashion croquis sheet
 ## Scope note
 
 Smoke approximation — mannequin proportions + blockout garments, not production retopo/rig/cloth sim. Balloon graphic is a chest mesh decal, not embroidery.
+
+
+## MCP pass (BRA-11)
+
+Live BlenderMCP on `:9876` — `SM_HundredAcre_Item3_MCP.blend`, `hundred-acre-item3-mcp.png`.
+Rebuild via Connect + `execute_code` using `mcp_item3_build.py` (not headless bpy-only).
